@@ -14,12 +14,7 @@ import '../scss/main.scss';
 /**
  *  3) Import custom modules
  */
-// Test examples, to show usage approach. Can be deleted
-import {consoleTest1, consoleTest2} from "./modules/test";
 
 /**
  * 4) Call functions
  */
-
-consoleTest1();
-consoleTest2();
