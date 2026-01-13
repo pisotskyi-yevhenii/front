@@ -24,13 +24,12 @@
     font-weight: bold;
     font-size: clamp(0.625rem, 5.87vw, 1.375rem);
     line-height: 1.2;
-    letter-spacing: 0;
   }
 
   &__instruction {
     color: var(--slate-500);
     font-size: clamp(0.625rem, 4vw, 0.9375rem);
     line-height: 1.4;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.0125rem;
   }
 }
