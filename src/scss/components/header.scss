@@ -1,6 +1,27 @@
-header {
-  padding: 5vmin;
-  border: 1px solid rgb(170, 102, 102);
+:root {
+  --base-color: hsl(0, 0%, 0%, 0.75);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'DM Sans', Arial, sans-serif;
-  font-weight: 400;
+  padding-block-start: 2rem;
+  padding-inline: 1rem;
+  color: var(--base-color);
+  max-width: min(100vw, 77rem);
+  margin: 0 auto;
+}
+
+.header {
+  margin-block-end: 1rem;
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+  }
 }

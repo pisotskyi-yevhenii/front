@@ -8,25 +8,30 @@
   <title>Pisotskyi (Home)</title>
 
   <!-- # SEO purpose -->
-  <meta name="robots" content="index, follow"> <!-- NOT be indexed by search engines -->
-  <meta name="description" content="short text description">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="robots" content="noindex, nofollow"> <!-- NOT be indexed by search engines -->
+  <meta name="description" content="Pisotskyi Homepage">
 
   <link rel="stylesheet" href="dist/bundle.min.css">
 </head>
 <body>
 
-  <header>
-    <h1>Home</h1>
-
-    <nav>
-      <ul>
-        <li><a href="./QR-code-component">QR-code-component</a></li>
-      </ul>
-    </nav>
+  <header class="header">
+    <h1 class="header__title">Frontend practise</h1>
   </header>
 
-  <script src="dist/bundle.min.js"></script>
+  <main class="portfolio">
+    <div class="project">
+      <div class="project__header">
+        <h2 class="project__title">QR-code-component</h2>
+        <a class="project__link" href="./QR-code-component">View</a>
+      </div>
+      <div class="project__design">
+        <img src="" alt="">
+        <img src="" alt="">
+      </div>
+    </div>
+  </main>
+
+  <script src="dist/bundle.min.js" defer></script>
 </body>
 </html>
