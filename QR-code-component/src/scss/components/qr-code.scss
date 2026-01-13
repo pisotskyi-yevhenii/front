@@ -1,3 +1,36 @@
-body {
-  color: red;
+.qr-code {
+  background-color: var(--white);
+  max-width: 320px;
+  width: 100%;
+  padding: 16px 16px 40px;
+  border-radius: 20px;
+  box-shadow: 0 25px 25px 0 rgb(0 0 0 / 0.0477);
+  text-align: center;
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 24px;
+    border-radius: 10px;
+  }
+
+  &__text {
+    padding: 0 16px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    color: var(--slate-900);
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+
+  &__instruction {
+    color: var(--slate-500);
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+  }
 }

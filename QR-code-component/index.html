@@ -8,20 +8,23 @@
   <title>QR code component</title>
 
   <!-- # SEO purpose -->
-  <meta name="robots" content="index, follow"> <!-- NOT be indexed by search engines -->
-  <meta name="description" content="short text description">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="robots" content="noindex, nofollow"> <!-- NOT be indexed by search engines -->
+  <meta name="description" content="QR code to visit Frontend Mentor">
 
   <link rel="stylesheet" href="dist/bundle.min.css">
 </head>
 <body>
 
-  Improve your front-end skills by building projects
-
-  Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
-
-
-  <script src="dist/bundle.min.js"></script>
+  <section class="qr-code" aria-label="QR code card">
+    <img class="qr-code__image" src="content/image-qr-code.png" alt="QR code to visit Frontend Mentor">
+    <div class="qr-code__text">
+      <h1 class="qr-code__title">Improve your front-end skills by building projects</h1>
+      <p class="qr-code__instruction">
+        Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
+      </p>
+    </div>
+  </section>
+  
+  <script src="dist/bundle.min.js" defer></script>
 </body>
 </html>
