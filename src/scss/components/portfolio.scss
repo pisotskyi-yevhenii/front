@@ -1,0 +1,57 @@
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.project {
+  border-block-end: 1px solid #ccc;
+  padding: 0.4rem 0;
+
+  &__header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 0.2rem;
+  }
+
+  &__title {
+    font-size: 1rem;
+  }
+
+  &__design {
+    display: none;
+  }
+
+  &__link {
+    text-align: center;
+    text-decoration: none;
+    padding: 0.1rem 0.5rem;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    color: var(--base-color);
+    border-radius: 0.3rem;
+    transition: all 0.3s;
+    align-self: end;
+
+    &:hover {
+      background-color: #999;
+    }
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .portfolio {
+    gap: 0.4rem;
+  }
+
+  .project {
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    &__link {
+      padding: 0.2rem 1rem;
+    }
+  }
+}
