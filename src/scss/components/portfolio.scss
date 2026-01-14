@@ -13,6 +13,21 @@
     align-items: start;
     justify-content: space-between;
     gap: 0.2rem;
+
+    text-decoration: none;
+    border-radius: 0.3rem;
+    color: inherit;
+    transition: all 0.5s;
+
+    &:where(:hover, :focus) {
+      background-color: var(--base-bgcolor);
+      color: #000;
+      outline: none;
+    }
+
+    &:where(:active) {
+      background-color: #aaa;
+    }
   }
 
   &__title {
@@ -25,18 +40,11 @@
 
   &__link {
     text-align: center;
-    text-decoration: none;
     padding: 0.1rem 0.5rem;
-    border: 1px solid #ccc;
-    background-color: #ccc;
-    color: var(--base-color);
-    border-radius: 0.3rem;
-    transition: all 0.3s;
+    background-color: var(--base-bgcolor);
     align-self: end;
-
-    &:hover {
-      background-color: #999;
-    }
+    border-radius: inherit;
+    transition: all 0.5s;
   }
 }
 
