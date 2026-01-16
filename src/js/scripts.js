@@ -16,6 +16,7 @@ import '../scss/main.scss';
  */
 // Test examples, to show usage approach. Can be deleted
 import {consoleTest1, consoleTest2} from "./modules/test";
+import {projectDesign} from "./modules/project-design";
 
 /**
  * 4) Call functions
@@ -23,3 +24,4 @@ import {consoleTest1, consoleTest2} from "./modules/test";
 
 consoleTest1();
 consoleTest2();
+// projectDesign();

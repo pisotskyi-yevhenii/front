@@ -1,59 +1,81 @@
 .portfolio {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: clamp(1rem, calc(0.636rem + 1.818vw), 2rem);
 }
 
 .project {
-  border-block-end: 1px solid #ccc;
-  padding: 0.4rem 0;
+  border: none;
 
   &__header {
     display: flex;
     align-items: start;
     justify-content: space-between;
-    gap: 0.2rem;
+    gap: 0.5rem;
 
     text-decoration: none;
     border-radius: 0.3rem;
     color: inherit;
-    transition: all 0.5s;
-
-    &:where(:hover, :focus) {
-      background-color: var(--base-bgcolor);
-      color: #000;
-      outline: none;
-    }
-
-    &:where(:active) {
-      background-color: #aaa;
-    }
   }
 
   &__title {
     font-size: 1rem;
-  }
+    align-self: center;
+    flex: 1 1 0;
 
-  &__design {
-    display: none;
+    &:where(:hover, :focus) {
+      background-color: var(--base-bgcolor);
+    }
   }
 
   &__link {
     text-align: center;
     padding: 0.1rem 0.5rem;
     background-color: var(--base-bgcolor);
-    align-self: end;
+
+    &:where(:hover, :focus) {
+      background-color: #bbb;
+    }
+  }
+
+  &__title,
+  &__link {
     border-radius: inherit;
     transition: all 0.5s;
-  }
-}
 
-@media screen and (min-width: 64em) {
-  .portfolio {
-    gap: 0.4rem;
+    &:where(:hover, :focus) {
+      color: #000;
+      outline: none;
+    }
+
+    &:where(:active) {
+      background-color: #999;
+    }
   }
 
-  .project {
+  &__design {
+    display: none;
+  }
+
+  @media screen and (min-width: calc(768em / 16)) {
+    border-block-end: 1px solid #ccc;
+
+    &__title {
+      padding-inline: 0.5rem;
+    }
+
+    &__design {
+      display: grid;
+      --grid-col-row-size: max(1.5vw, 1.4rem);
+      grid-template-columns:repeat(20, var(--grid-col-row-size));
+      grid-auto-rows: var(--grid-col-row-size);
+      justify-content: center;
+      padding-block: 0.5rem;
+      margin-inline-start: 0.5rem;
+    }
+  }
+
+  @media screen and (min-width: calc(1024em / 16)) {
     &__title {
       font-size: 1.2rem;
     }

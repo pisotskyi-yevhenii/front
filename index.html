@@ -19,22 +19,34 @@
 </head>
 <body>
 
-  <header class="header">
-    <h1 class="header__title">Frontend practise</h1>
-  </header>
+  <div class="wrapper">
+    <header class="header">
+      <h1 class="header__title">Frontend practise</h1>
+    </header>
 
-  <main class="portfolio">
-    <div class="project">
-      <a class="project__header" href="./QR-code-component">
-        <h2 class="project__title">QR-code-component</h2>
-        <span class="project__link">View</span>
-      </a>
-      <div class="project__design">
-        <img src="" alt="">
-        <img src="" alt="">
-      </div>
-    </div>
-  </main>
+    <main class="portfolio">
+
+      <article class="project">
+        <a class="project__header" href="./QR-code-component">
+          <h2 class="project__title">QR code component</h2>
+          <span class="project__link">View</span>
+        </a>
+        <figure class="project__design">
+          <div class="device device--mobile">
+            <div class="device__screen device__screen--mobile">
+              <img src="content/QR-code-component/Mobile.jpg" alt="preview mobile design">
+            </div>
+          </div>
+          <div class="device device--desktop">
+            <div class="device__screen device__screen--desktop">
+              <img src="content/QR-code-component/Desktop.jpg" alt="preview desktop design">
+            </div>
+          </div>
+        </figure>
+      </article>
+
+    </main>
+  </div>
 
   <script src="dist/bundle.min.js" defer></script>
 </body>

@@ -1,3 +1,5 @@
 @use 'fonts-DM-Sans';
-@use 'components/header';
+@use 'variables';
+@use 'components/base';
 @use 'components/portfolio';
+@use 'components/project-devices';

@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* !!! only for development.
+   To have always set vertical scroll on desktop. For mobile it is unnecessary
+   */
+  @media screen and (min-width: calc(1400em / 16)) {
+    overflow-y: scroll;
+  }
+}
+
+body {
+  // never use on body layout properties (width, margin, padding, ect.). Move them in wrapper.
+  font-family: 'DM Sans', Arial, sans-serif;
+  color: var(--base-color);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: calc(800rem / 16);
+  margin: 0 auto;
+  padding-block-start: 16px;
+  padding-inline: clamp(0rem, calc(0.682rem - 0.909vw), 0.5rem);
+}
+
+.header {
+  margin-block-end: clamp(1rem, calc(0.636rem + 1.818vw), 2rem);
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
