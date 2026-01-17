@@ -45,7 +45,6 @@
 
     &:where(:hover, :focus) {
       color: #000;
-      outline: none;
     }
 
     &:where(:active) {
@@ -66,7 +65,7 @@
 
     &__design {
       display: grid;
-      --grid-col-row-size: max(1.5vw, 1.4rem);
+      --grid-col-row-size: 1.5rem;
       grid-template-columns:repeat(20, var(--grid-col-row-size));
       grid-auto-rows: var(--grid-col-row-size);
       justify-content: center;
