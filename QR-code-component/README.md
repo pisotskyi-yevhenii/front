@@ -1,20 +1,16 @@
-# The "QR code component" task by online service "Frontend Mentor"
+## Task: "QR code component" by service "Frontend Mentor"
 
 https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H
 
-## My solution
+### My solution: https://pisotskyi-yevhenii.github.io/front/QR-code-component/
 
-https://pisotskyi-yevhenii.github.io/front/QR-code-component/
-
-## Built with
+### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
 
-## All my solution:
-
-https://pisotskyi-yevhenii.github.io/front/
+### All my solution: https://pisotskyi-yevhenii.github.io/front/
 
 
