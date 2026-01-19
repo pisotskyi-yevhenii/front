@@ -1,5 +1,5 @@
 .qr-code {
-  background-color: var(--white);
+  background-color: var(--1-white);
   max-width: 20rem;
   width: 100%;
   padding: clamp(0.5rem, 4.27vw, 1rem) clamp(0.5rem, 4.27vw, 1rem) clamp(1.25rem, 10.67vw, 2.5rem);
@@ -20,14 +20,14 @@
 
   &__title {
     margin-block-end: clamp(0.25rem, 4.27vw, 1rem);
-    color: var(--slate-900);
+    color: var(--1-slate-900);
     font-weight: bold;
     font-size: clamp(0.625rem, 5.87vw, 1.375rem);
     line-height: 1.2;
   }
 
   &__instruction {
-    color: var(--slate-500);
+    color: var(--1-slate-500);
     font-size: clamp(0.625rem, 4vw, 0.9375rem);
     line-height: 1.4;
     letter-spacing: 0.0125rem;

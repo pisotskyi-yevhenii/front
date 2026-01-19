@@ -1,0 +1,22 @@
+/*
+!!! Do not use local() function if need exact font rendering across all users.
+System user version might differ from included version
+*/
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('../fonts/Figtree/Figtree-Medium.woff2') format('woff2'),
+  url('../fonts/Figtree/Figtree-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('../fonts/Figtree/Figtree-ExtraBold.woff2') format('woff2'),
+  url('../fonts/Figtree/Figtree-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

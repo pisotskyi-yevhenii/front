@@ -30,7 +30,6 @@
 
   &__link {
     text-align: center;
-    padding: 0.1rem 0.5rem;
     background-color: var(--base-bgcolor);
 
     &:where(:hover, :focus) {
@@ -40,6 +39,7 @@
 
   &__title,
   &__link {
+    padding: 0.1rem 0.5rem;
     border-radius: inherit;
     transition: all 0.5s;
 
@@ -58,10 +58,6 @@
 
   @media screen and (min-width: calc(768em / 16)) {
     border-block-end: 1px solid #ccc;
-
-    &__title {
-      padding-inline: 0.5rem;
-    }
 
     &__design {
       display: grid;
