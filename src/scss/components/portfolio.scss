@@ -11,10 +11,10 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: calc(8rem / 16);
 
     text-decoration: none;
-    border-radius: 0.3rem;
+    border-radius: calc(4.8rem / 16);
     color: inherit;
   }
 
@@ -33,22 +33,22 @@
     background-color: var(--base-bgcolor);
 
     &:where(:hover, :focus) {
-      background-color: #bbb;
+      background-color: var(--bgc-hover);
     }
   }
 
   &__title,
   &__link {
-    padding: 0.1rem 0.5rem;
+    padding: calc(1.6rem / 16) calc(8rem / 16);
     border-radius: inherit;
-    transition: all 0.5s;
+    transition: color 0.5s ease, background-color 0.5s ease;
 
     &:where(:hover, :focus) {
-      color: #000;
+      color: var(--color-hover);
     }
 
     &:where(:active) {
-      background-color: #999;
+      background-color: var(--bgc-active);
     }
   }
 
@@ -61,12 +61,12 @@
 
     &__design {
       display: grid;
-      --grid-col-row-size: 1.5rem;
+      --grid-col-row-size: calc(24rem / 16);
       grid-template-columns:repeat(20, var(--grid-col-row-size));
       grid-auto-rows: var(--grid-col-row-size);
       justify-content: center;
-      padding-block: 0.5rem;
-      margin-inline-start: 0.5rem;
+      padding-block: calc(8rem / 16);
+      margin-inline-start: calc(8rem / 16);
     }
   }
 
@@ -76,7 +76,7 @@
     }
 
     &__link {
-      padding: 0.2rem 1rem;
+      padding: calc(3.2rem / 16) calc(16rem / 16);
     }
   }
 }

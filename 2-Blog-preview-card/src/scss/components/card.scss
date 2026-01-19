@@ -7,7 +7,7 @@
   border-radius: calc(20rem / 16);
   box-shadow: 8px 8px 0 0 black;
   color: var(--2-gray-950);
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
   cursor: pointer;
 
   &__link {
@@ -16,6 +16,7 @@
     gap: calc(24rem / 16);
     text-decoration: none;
     color: inherit;
+    outline: none;
   }
 
   &__image {
@@ -49,7 +50,7 @@
 
   &__title {
     font-size: clamp(1.25rem, calc(1.162rem + 0.376vw), 1.50rem);
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
   }
 
   &__description {
@@ -83,20 +84,9 @@
     .card__title {
       color: var(--2-yellow);
     }
-
-    .card__link {
-      outline: none;
-    }
   }
 
   @media screen and (min-width: calc(375em / 16)) {
     max-width: 100%;
-  }
-
-  /* Accessibility: reduce or remove animations when motion is disabled on user browser */
-  @media (prefers-reduced-motion: reduce) {
-    .card {
-      transition: none;
-    }
   }
 }
