@@ -94,8 +94,8 @@
   @media (prefers-reduced-motion: reduce) {
     transition: none;
 
-    /*&__title {
+    &__title {
       transition: color 0.3s ease;
-    }*/
+    }
   }
 }
