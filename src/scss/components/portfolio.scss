@@ -57,7 +57,7 @@
   }
 
   @media screen and (min-width: calc(768em / 16)) {
-    border-block-end: 1px solid #ccc;
+    border-block-end: 1px solid hsl(0, 0%, 80%, 1);
 
     &__design {
       display: grid;
@@ -72,7 +72,7 @@
 
   @media screen and (min-width: calc(1024em / 16)) {
     &__title {
-      font-size: 1.2rem;
+      font-size: calc(19.2rem / 16);
     }
 
     &__link {

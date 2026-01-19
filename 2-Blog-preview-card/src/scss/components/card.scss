@@ -89,4 +89,13 @@
   @media screen and (min-width: calc(375em / 16)) {
     max-width: 100%;
   }
+
+  /* Accessibility: reduce or remove animations when motion is disabled on user browser */
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    /*&__title {
+      transition: color 0.3s ease;
+    }*/
+  }
 }
