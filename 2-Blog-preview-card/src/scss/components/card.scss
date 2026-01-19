@@ -86,13 +86,13 @@
     }
   }
 
-  /* Accessibility: reduce or remove animations when motion is disabled on user browser */
+  /* Accessibility: reduce animations when motion is disabled on user browser/OS system */
   @media (prefers-reduced-motion: reduce) {
-    /*transition: 1s;
+    transition: 1s;
 
     &__title {
       transition: 1s;
-    }*/
+    }
   }
 
   @media screen and (min-width: calc(375em / 16)) {
