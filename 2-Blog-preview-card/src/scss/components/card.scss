@@ -1,4 +1,5 @@
 .card {
+  max-width: 90%;
   width: clamp(20.4375rem, calc(19.183rem + 5.352vw), 24rem);
   background-color: var(--2-white);
   padding: calc(24rem / 16);
@@ -8,18 +9,6 @@
   color: var(--2-gray-950);
   transition: all 0.3s ease;
   cursor: pointer;
-
-  &:has(&__link:where(:hover, :focus)) {
-    box-shadow: 16px 16px 0 0 black;
-
-    .card__title {
-      color: var(--2-yellow);
-    }
-
-    .card__link {
-      outline: none;
-    }
-  }
 
   &__link {
     display: flex;
@@ -88,7 +77,26 @@
     line-height: 1.5;
   }
 
-  @media screen and (max-width: calc(374em / 16)) {
-    max-width: 90%;
+  &:has(&__link:where(:hover, :focus)) {
+    box-shadow: 16px 16px 0 0 black;
+
+    .card__title {
+      color: var(--2-yellow);
+    }
+
+    .card__link {
+      outline: none;
+    }
+  }
+
+  @media screen and (min-width: calc(375em / 16)) {
+    max-width: 100%;
+  }
+
+  /* Accessibility: reduce or remove animations when motion is disabled on user browser */
+  @media (prefers-reduced-motion: reduce) {
+    .card {
+      transition: none;
+    }
   }
 }
