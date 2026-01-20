@@ -1,0 +1,34 @@
+@use "sass:math";
+
+/* Vars*/
+$root-font-size: 16px;
+
+/* Functions */
+@function px-to-em($px) {
+  @return math.div($px, $root-font-size) * 1em;
+}
+
+@function px-to-rem($px) {
+  @return math.div($px, $root-font-size) * 1rem;
+}
+
+@function fluid-clamp($min-px, $max-px, $min-vw: 375px, $max-vw: 1440px) {
+  $min: px-to-rem($min-px);
+  $max: px-to-rem($max-px);
+
+  // Strip px units completely
+  $min-value: math.div($min-px, 1px);
+  $max-value: math.div($max-px, 1px);
+
+  $min-vw: math.div($min-vw, 1px);
+  $max-vw: math.div($max-vw, 1px);
+
+  $slope-unitless: math.div($max-value - $min-value, $max-vw - $min-vw);
+  $intercept-value: math.div($min-value - $slope-unitless * $min-vw, math.div($root-font-size, 1px));
+
+  @return clamp(
+    #{$min},
+    #{$intercept-value}rem + #{$slope-unitless * 100}vw,
+    #{$max}
+  );
+}

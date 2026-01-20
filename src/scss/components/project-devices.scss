@@ -1,15 +1,17 @@
+@use '../functions' as fn;
+
 .device {
   position: relative;
-  border: solid calc(2rem / 16) black;
+  border: solid fn.px-to-rem(2px) black;
   box-shadow: 0 0.25vw 0.5vw rgba(0, 0, 0, 0.2);
-  border-radius: calc(3rem / 16);
+  border-radius: fn.px-to-rem(3px);
 
   &__screen {
     width: 100%;
     height: 100%;
     // background-color: red; // !!! for dev test
-    overflow: hidden;
-    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     img {
       display: block;
@@ -23,22 +25,22 @@
     grid-column: 1 / span 5;
     grid-row: 1 / span 9;
 
-    border-block-end: solid calc(3.2rem / 16) black;
+    border-block-end: solid fn.px-to-rem(3.2px) black;
   }
 
   &--desktop {
     grid-column: 7 / span 14;
     grid-row: 1 / span 9;
 
-    border-block-end: solid calc(9.6rem / 16) black;
+    border-block-end: solid fn.px-to-rem(9.6px) black;
   }
 
-  @media screen and (min-width: calc(1200em / 16)) {
+  @media screen and (min-width: fn.px-to-em(1200px)) {
     &__screen {
       scrollbar-width: thin;
 
       &::-webkit-scrollbar {
-        width: calc(8rem / 16);
+        width: fn.px-to-rem(8px);
       }
 
       &::-webkit-scrollbar-track {
@@ -47,9 +49,8 @@
 
       &::-webkit-scrollbar-thumb {
         background: #555;
-        border-radius: calc(4rem / 16);
+        border-radius: fn.px-to-rem(4px);
       }
-
     }
   }
 }

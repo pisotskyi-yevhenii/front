@@ -1,7 +1,9 @@
+@use '../functions' as fn;
+
 .portfolio {
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, calc(0.636rem + 1.818vw), 2rem);
+  gap: fn.fluid-clamp(16px, 32px);
 }
 
 .project {
@@ -11,15 +13,15 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
-    gap: calc(8rem / 16);
+    gap: fn.px-to-rem(8px);
 
     text-decoration: none;
-    border-radius: calc(4.8rem / 16);
+    border-radius: fn.px-to-rem(4.8px);
     color: inherit;
   }
 
   &__title {
-    font-size: calc(16rem / 16);
+    font-size: fn.px-to-rem(16px);
     align-self: center;
     flex: 1 1 0;
 
@@ -39,7 +41,7 @@
 
   &__title,
   &__link {
-    padding: calc(1.6rem / 16) calc(8rem / 16);
+    padding: fn.px-to-rem(1.6px) fn.px-to-rem(8px);
     border-radius: inherit;
     transition: color 0.5s ease, background-color 0.5s ease;
 
@@ -56,28 +58,27 @@
     display: none;
   }
 
-  @media screen and (min-width: calc(768em / 16)) {
+  @media screen and (min-width: fn.px-to-em(768px)) {
     --grey: hsl(0, 0%, 80%, 1);
     border-block-end: 1px solid var(--grey);
 
     &__design {
       display: grid;
-      --grid-col-row-size: calc(24rem / 16);
-      grid-template-columns:repeat(20, var(--grid-col-row-size));
-      grid-auto-rows: var(--grid-col-row-size);
+      grid-template-columns: repeat(20, fn.px-to-rem(24px));
+      grid-auto-rows: fn.px-to-rem(24px);
       justify-content: center;
-      padding-block: calc(8rem / 16);
-      margin-inline-start: calc(8rem / 16);
+      padding-block: fn.px-to-rem(8px);
+      margin-inline-start: fn.px-to-rem(8px);
     }
   }
 
-  @media screen and (min-width: calc(1024em / 16)) {
+  @media screen and (min-width: fn.px-to-em(1024px)) {
     &__title {
-      font-size: calc(19.2rem / 16);
+      font-size: fn.px-to-rem(19.2px);
     }
 
     &__link {
-      padding: calc(3.2rem / 16) calc(16rem / 16);
+      padding: fn.px-to-rem(3.2px) fn.px-to-rem(16px);
     }
   }
 }
