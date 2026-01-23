@@ -50,23 +50,23 @@
     flex-direction: column;
     gap: fn.px-to-rem(16px);
     list-style: none;
+
+    li {
+      padding: fn.px-to-rem(12px);
+      border-radius: fn.px-to-rem(8px);
+      background-color: var(--3-grey-700);
+      cursor: pointer;
+      transition: background-color .8s ease, color .8s ease;
+    }
   }
 
-  &__button {
-    padding: fn.px-to-rem(12px);
-    border-radius: fn.px-to-rem(8px);
-    background-color: var(--3-grey-700);
-    cursor: pointer;
-    transition: background-color .8s ease, color .8s ease;
-
-    a {
-      text-decoration: none;
-      font-size: fn.px-to-rem(14px);
-      line-height: 1.5;
-      font-weight: 700;
-      color: inherit;
-      outline: none;
-    }
+  &__link {
+    text-decoration: none;
+    font-size: fn.px-to-rem(14px);
+    line-height: 1.5;
+    font-weight: 700;
+    color: inherit;
+    outline: none;
   }
 
   /* Accessibility: reduce animations when motion is disabled on user browser/OS system */
@@ -81,8 +81,8 @@
   }
 
   @media screen and (min-width: fn.px-to-em(1440px)) {
-    &__button:hover,
-    &__button:focus-within {
+    &__links li:hover,
+    &__links li:focus-within {
       transition: all .1s ease;
       background-color: var(--3-green);
       color: var(--3-grey-700);
