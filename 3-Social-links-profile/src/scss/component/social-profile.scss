@@ -71,8 +71,10 @@
 
   /* Accessibility: reduce animations when motion is disabled on user browser/OS system */
   @media (prefers-reduced-motion: reduce) {
-    &__button {
-      transition: 1s;
+    &__links {
+      li {
+        transition: 1s;
+      }
     }
   }
 
