@@ -30,6 +30,7 @@
     font-size: fn.px-to-rem(24px);
     font-weight: 600;
     line-height: 1.5;
+    letter-spacing: fn.px-to-rem(0.4px);
   }
 
   &__location {
@@ -59,9 +60,28 @@
     padding: fn.px-to-rem(12px);
     border-radius: fn.px-to-rem(8px);
     background-color: var(--3-grey-700);
+    transition: background-color .8s ease, color .8s ease;
+    outline: none;
+  }
+
+  /* Accessibility: reduce animations when motion is disabled on user browser/OS system */
+  @media (prefers-reduced-motion: reduce) {
+    &__button {
+      transition: 1s;
+    }
   }
 
   @media screen and (min-width: fn.px-to-em(375px)) {
     width: fn.fluid-clamp(327px, 384px, 375px, 768px);
+  }
+
+  @media screen and (min-width: fn.px-to-em(1440px)) {
+    &__button:hover,
+    &__button:focus {
+      transition: all .1s ease;
+      cursor: pointer;
+      background-color: var(--3-green);
+      color: var(--3-grey-700);
+    }
   }
 }

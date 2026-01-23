@@ -1,6 +1,6 @@
 ## Task: "Social links profile" by service "Frontend Mentor"
 
-https://www.frontendmentor.io/
+https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ
 
 ### My solution: https://pisotskyi-yevhenii.github.io/front/3-Social-links-profile/
 
