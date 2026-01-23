@@ -85,5 +85,9 @@ module.exports = (env, argv) => {
       }),
     ],
     watch: !isProd,
+    performance: {
+      hints: 'warning',
+      maxAssetSize: 400000, //400 KiB - prevents warning due to size of InterVariable.woff2 in 3- project
+    }
   }));
 };
