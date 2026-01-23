@@ -1,0 +1,67 @@
+@use '../functions' as fn;
+
+.social-profile {
+  background-color: var(--3-grey-800);
+  color: var(--3-white);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: fn.px-to-rem(24px);
+  width: 98%;
+  padding: fn.fluid-clamp(24px, 40px, 375px, 768px);
+  border-radius: fn.px-to-rem(12px);
+
+  &__photo {
+    border-radius: 50%;
+    width: 100%;
+    max-width: fn.px-to-rem(88px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: fn.px-to-rem(4px);
+  }
+
+  &__name {
+    font-size: fn.px-to-rem(24px);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__location {
+    font-size: fn.px-to-rem(14px);
+    line-height: 1.5;
+    font-weight: 700;
+    color: var(--3-green);
+  }
+
+  &__bio {
+    font-size: fn.px-to-rem(14px);
+    line-height: 1.5;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: fn.px-to-rem(16px);
+  }
+
+  &__button {
+    font-size: fn.px-to-rem(14px);
+    line-height: 1.5;
+    font-weight: 700;
+    color: inherit;
+    text-decoration: none;
+    padding: fn.px-to-rem(12px);
+    border-radius: fn.px-to-rem(8px);
+    background-color: var(--3-grey-700);
+  }
+
+  @media screen and (min-width: fn.px-to-em(375px)) {
+    width: fn.fluid-clamp(327px, 384px, 375px, 768px);
+  }
+}

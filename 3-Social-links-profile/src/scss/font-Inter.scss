@@ -1,0 +1,21 @@
+/*
+ From https://rsms.me/inter/download/ (page of designer font)
+ The link is on google font of Inter font. Not all fonts have link
+ Downloaded archive has woff2 variable file. Woff2 - supported all browser
+ In inspector browser for all font-weight of variable font uses the same name
+ */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter/InterVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter/InterVariable-Italic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}

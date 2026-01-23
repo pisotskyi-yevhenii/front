@@ -1,0 +1,29 @@
+@use 'functions' as fn;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; // best practice for stability unexpected overriding
+
+  @media screen and (min-width: fn.px-to-em(1400px)) {
+    //overflow-y: scroll; // ! only for development. Set vertical scroll on desktop. For mobile it is unnecessary
+  }
+}
+
+body {
+  // never use on body layout properties (width, margin, padding, ect.). Move them in wrapper.
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.wrapper {
+  //background-color: var(--3-grey-900);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
