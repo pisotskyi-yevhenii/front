@@ -17,7 +17,7 @@
     max-width: fn.px-to-rem(88px);
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    margin: 0 auto;
+    align-self: center;
   }
 
   &__info {
@@ -27,21 +27,21 @@
   }
 
   &__name {
-    font-size: fn.px-to-rem(24px);
+    font-size: var(--3-font-500);
     font-weight: 600;
     line-height: 1.5;
     letter-spacing: fn.px-to-rem(0.4px);
   }
 
   &__location {
-    font-size: fn.px-to-rem(14px);
+    font-size: var(--3-font-90);
     line-height: 1.5;
     font-weight: 700;
     color: var(--3-green);
   }
 
   &__bio {
-    font-size: fn.px-to-rem(14px);
+    font-size: var(--3-font-90);
     line-height: 1.5;
   }
 
@@ -62,7 +62,7 @@
 
   &__link {
     text-decoration: none;
-    font-size: fn.px-to-rem(14px);
+    font-size: var(--3-font-90);
     line-height: 1.5;
     font-weight: 700;
     color: inherit;

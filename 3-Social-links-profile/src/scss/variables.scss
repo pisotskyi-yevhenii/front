@@ -1,7 +1,49 @@
+@use 'functions' as fn;
+
 :root {
+  // To use sass functions / vars inside CSS Variables need wrap it #{}
+
+  // Colors
   --3-white: hsl(0, 0%, 100%, 1);
   --3-green: hsl(75, 94%, 57%, 1);
   --3-grey-700: hsl(0, 0%, 20%, 1);
   --3-grey-800: hsl(0, 0%, 12%, 1);
   --3-grey-900: hsl(0, 0%, 8%, 1);
+
+  // Fonts
+  --3-font-500: #{fn.px-to-rem(24px)};
+  --3-font-100: #{fn.px-to-rem(16px)};
+  --3-font-90: #{fn.px-to-rem(14px)};
+
+  --3-font-family-primary: "Inter", system-ui, sans-serif;
+
+  --3-font-weight-400: 400;
+  --3-font-weight-600: 600;
+  --3-font-weight-700: 700;
+
+  --3-font-line-height-150: 1.5;
+
+  --3-font-letter-space-100: #{fn.px-to-rem(0px)};
+}
+
+// Presets (did not use in project, just for example)
+.heading {
+  font-size: var(--3-font-500);
+  font-weight: var(--3-font-weight-600);
+  line-height: var(--3-font-line-height-150);
+  letter-spacing: var(--3-font-letter-space-100);
+}
+
+.text-regular {
+  font-size: var(--3-font-90);
+  font-weight: var(--3-font-weight-400);
+  line-height: var(--3-font-line-height-150);
+  letter-spacing: var(--3-font-letter-space-100);
+}
+
+.text-bold {
+  font-size: var(--3-font-90);
+  font-weight: var(--3-font-weight-700);
+  line-height: var(--3-font-line-height-150);
+  letter-spacing: var(--3-font-letter-space-100);
 }
