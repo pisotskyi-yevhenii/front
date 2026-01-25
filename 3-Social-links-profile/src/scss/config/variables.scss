@@ -1,0 +1,20 @@
+@use 'base-tokens' as token;
+
+/* === Variables === */
+// $p3 - project #3
+
+// Font
+$p3-font-family-primary: "Inter", system-ui, sans-serif;
+
+$p3-fs-heading: token.$p3-token-font-24;
+$p3-fs-text: token.$p3-token-font-14;
+
+// Colors
+$p3-color-primary: token.$p3-token-white;
+$p3-color-secondary: token.$p3-token-green;
+$p3-color-hover: token.$p3-token-grey-700;
+
+// Backgrounds
+$p3-bg-color: token.$p3-token-grey-900;
+$p3-bg-color-box: token.$p3-token-grey-800;
+$p3-bg-color-element: token.$p3-token-grey-700;

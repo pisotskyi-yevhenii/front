@@ -1,0 +1,14 @@
+@mixin heading-semibold {
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+@mixin text-regular {
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@mixin text-bold {
+  font-weight: 700;
+  line-height: 1.5;
+}
