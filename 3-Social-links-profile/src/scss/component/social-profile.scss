@@ -51,7 +51,7 @@
     gap: fn.px-to-rem(16px);
     list-style: none;
 
-    li {
+    > li {
       padding: fn.px-to-rem(12px);
       border-radius: fn.px-to-rem(8px);
       background-color: var(--3-grey-700);
