@@ -56,7 +56,6 @@
       border-radius: fn.px-to-rem(8px);
       background-color: var(--3-grey-700);
       cursor: pointer;
-      transition: background-color .8s ease, color .8s ease;
     }
   }
 
@@ -72,7 +71,7 @@
   /* Accessibility: reduce animations when motion is disabled on user browser/OS system */
   @media (prefers-reduced-motion: reduce) {
     &__links {
-      li {
+      > li {
         transition: 1s;
       }
     }
@@ -83,11 +82,17 @@
   }
 
   @media screen and (min-width: fn.px-to-em(1440px)) {
-    &__links li:hover,
-    &__links li:focus-within {
-      transition: all .1s ease;
-      background-color: var(--3-green);
-      color: var(--3-grey-700);
+    &__links {
+      > li {
+        transition: background-color .8s ease, color .8s ease;
+      }
+
+      > li:hover,
+      > li:focus-within {
+        transition: background-color .1s ease, color .1s ease;
+        background-color: var(--3-green);
+        color: var(--3-grey-700);
+      }
     }
   }
 }
