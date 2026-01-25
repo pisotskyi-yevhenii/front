@@ -1,20 +1,23 @@
-@use 'base-tokens' as token;
+/*
+  CSS variables allow you to centralize design tokens directly in your stylesheets,
+  making it easier to maintain and update colors across your entire site without recompiling Sass.
+  */
+:root {
+  /* === Variables === */
 
-/* === Variables === */
-// $p3 - project #3
+  // Font
+  --3-font-family-primary: "Inter", system-ui, sans-serif;
 
-// Font
-$p3-font-family-primary: "Inter", system-ui, sans-serif;
+  --3-fs-heading: var(--3-token-font-500);
+  --3-fs-text: var(--3-token-font-90);
 
-$p3-fs-heading: token.$p3-token-font-24;
-$p3-fs-text: token.$p3-token-font-14;
+  // Colors
+  --3-color-primary: var(--3-token-white);
+  --3-color-secondary: var(--3-token-green);
+  --3-color-hover: var(--3-token-grey-700);
 
-// Colors
-$p3-color-primary: token.$p3-token-white;
-$p3-color-secondary: token.$p3-token-green;
-$p3-color-hover: token.$p3-token-grey-700;
-
-// Backgrounds
-$p3-bg-color: token.$p3-token-grey-900;
-$p3-bg-color-box: token.$p3-token-grey-800;
-$p3-bg-color-element: token.$p3-token-grey-700;
+  // Backgrounds
+  --3-bg-color: var(--3-token-grey-900);
+  --3-bg-color-box: var(--3-token-grey-800);
+  --3-bg-color-element: var(--3-token-grey-700);
+}

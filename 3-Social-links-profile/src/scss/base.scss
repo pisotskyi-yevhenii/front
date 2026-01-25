@@ -1,5 +1,3 @@
-@use 'config/variables' as var;
-
 * {
   padding: 0;
   margin: 0;
@@ -16,11 +14,11 @@ html {
 
 body {
   // never use on body layout properties (width, margin, padding, ect.). Move them in wrapper.
-  font-family: var.$p3-font-family-primary;
+  font-family: var(--3-font-family-primary);
 }
 
 .wrapper {
-  background-color: var.$p3-bg-color;
+  background-color: var(--3-bg-color);
   min-height: 100dvh;
   display: flex;
   flex-direction: column;

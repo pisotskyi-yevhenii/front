@@ -1,11 +1,10 @@
 @use '../config/functions' as fn;
 @use '../config/viewports' as viewport;
 @use '../config/mixins' as mixin;
-@use '../config/variables' as var;
 
 .social-profile {
-  background-color: var.$p3-bg-color-box;
-  color: var.$p3-color-primary;
+  background-color: var(--3-bg-color-box);
+  color: var(--3-color-primary);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -34,19 +33,19 @@
   }
 
   &__name {
-    font-size: var.$p3-fs-heading;
+    font-size: var(--3-fs-heading);
     @include mixin.heading-semibold;
     letter-spacing: fn.px-to-rem(0.4px);
   }
 
   &__location {
-    font-size: var.$p3-fs-text;
+    font-size: var(--3-fs-text);
     @include mixin.text-bold;
-    color: var.$p3-color-secondary;
+    color: var(--3-color-secondary);
   }
 
   &__bio {
-    font-size: var.$p3-fs-text;
+    font-size: var(--3-fs-text);
     @include mixin.text-regular;
   }
 
@@ -59,7 +58,7 @@
     > li {
       padding: fn.px-to-rem(12px);
       border-radius: fn.px-to-rem(8px);
-      background-color: var.$p3-bg-color-element;
+      background-color: var(--3-bg-color-element);
       cursor: pointer;
 
       /* Accessibility: reduce animations when motion is disabled on user browser/OS system */
@@ -73,8 +72,8 @@
         &:hover,
         &:focus-within {
           transition: background-color .1s ease, color .1s ease;
-          background-color: var.$p3-color-secondary;
-          color: var.$p3-color-hover;
+          background-color: var(--3-color-secondary);
+          color: var(--3-color-hover);
         }
       }
     }
@@ -82,7 +81,7 @@
 
   &__link {
     text-decoration: none;
-    font-size: var.$p3-fs-text;
+    font-size: var(--3-fs-text);
     @include mixin.text-bold;
     color: inherit;
     outline: none;

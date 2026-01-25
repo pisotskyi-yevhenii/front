@@ -1,14 +1,16 @@
-/* === Tokens === */
-/* DO NOT USE for CSS PROPERTIES. ONLY for Variables */
+:root {
+  /* DO NOT USE Tokens directly in CSS/SCSS. ONLY to set Variables */
+  /* === Tokens === */
 
-// Colors
-$p3-token-white: hsl(0, 0%, 100%, 1);
-$p3-token-green: hsl(75, 94%, 57%, 1);
-$p3-token-grey-700: hsl(0, 0%, 20%, 1);
-$p3-token-grey-800: hsl(0, 0%, 12%, 1);
-$p3-token-grey-900: hsl(0, 0%, 8%, 1);
+  // Tokens: Colors
+  --3-token-white: hsl(0, 0%, 100%, 1);
+  --3-token-green: hsl(75, 94%, 57%, 1);
+  --3-token-grey-700: hsl(0, 0%, 20%, 1);
+  --3-token-grey-800: hsl(0, 0%, 12%, 1);
+  --3-token-grey-900: hsl(0, 0%, 8%, 1);
 
-// Font sizes
-$p3-token-font-24: 24px;
-$p3-token-font-16: 16px;
-$p3-token-font-14: 14px;
+  // Tokens: Font sizes
+  --3-token-font-500: 24px;
+  --3-token-font-100: 16px;
+  --3-token-font-90: 14px;
+}
