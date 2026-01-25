@@ -1,23 +1,29 @@
-/*
-  CSS variables allow you to centralize design tokens directly in your stylesheets,
-  making it easier to maintain and update colors across your entire site without recompiling Sass.
-  */
-:root {
-  /* === Variables === */
+// =============================================
+//  Variables allow to centralize design,
+//  making it easier to maintain / update
+//  without recompiling Sass
+// =============================================
 
-  // Font
+// =============================================
+// Variables – use everywhere. These reference tokens.
+// =============================================
+
+@use 'base-tokens';
+
+:root {
   --3-font-family-primary: "Inter", system-ui, sans-serif;
 
-  --3-fs-heading: var(--3-token-font-500);
-  --3-fs-text: var(--3-token-font-90);
+  // Font sizes
+  --3-fs-heading: var(--__3-font-500);
+  --3-fs-text: var(--__3-font-90);
 
   // Colors
-  --3-color-primary: var(--3-token-white);
-  --3-color-secondary: var(--3-token-green);
-  --3-color-hover: var(--3-token-grey-700);
+  --3-color-primary: var(--__3-white);
+  --3-color-secondary: var(--__3-green);
+  --3-color-hover: var(--__3-grey-700);
 
   // Backgrounds
-  --3-bg-color: var(--3-token-grey-900);
-  --3-bg-color-box: var(--3-token-grey-800);
-  --3-bg-color-element: var(--3-token-grey-700);
+  --3-bg-color: var(--__3-grey-900);
+  --3-bg-color-box: var(--__3-grey-800);
+  --3-bg-color-element: var(--__3-grey-700);
 }
