@@ -10,20 +10,23 @@
   text-align: center;
   gap: fn.px-to-rem(24px);
   width: 98%;
-  padding: fn.fluid-clamp(24px, 40px, viewport.$p3-mobile, viewport.$p3-tablet);
+  padding: fn.fluid-clamp(24px, 40px, viewport.$mobile, viewport.$tablet);
   border-radius: fn.px-to-rem(12px);
 
-  @media (min-width: fn.px-to-em(viewport.$p3-mobile)) {
-    width: fn.fluid-clamp(327px, 384px, viewport.$p3-mobile, viewport.$p3-tablet);
+  @media (min-width: fn.px-to-em(viewport.$mobile)) {
+    width: fn.fluid-clamp(327px, 384px, viewport.$mobile, viewport.$tablet);
   }
 
   &__photo {
-    border-radius: 50%;
-    width: 100%;
-    max-width: fn.px-to-rem(88px);
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    align-self: center;
+    & > img {
+      border-radius: 50%;
+      width: 100%;
+      max-width: fn.px-to-rem(88px);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      margin: auto;
+    }
   }
 
   &__info {
@@ -54,36 +57,36 @@
     flex-direction: column;
     gap: fn.px-to-rem(16px);
     list-style: none;
-
-    > li {
-      padding: fn.px-to-rem(12px);
-      border-radius: fn.px-to-rem(8px);
-      background-color: var(--3-bg-color-element);
-      cursor: pointer;
-
-      /* Accessibility: reduce animations when motion is disabled on user browser/OS system */
-      @media (prefers-reduced-motion: reduce) {
-        transition: 1s;
-      }
-
-      @media (min-width: fn.px-to-em(viewport.$p3-desktop)) {
-        transition: background-color .8s ease, color .8s ease;
-
-        &:hover,
-        &:focus-within {
-          transition: background-color .1s ease, color .1s ease;
-          background-color: var(--3-color-secondary);
-          color: var(--3-color-hover);
-        }
-      }
-    }
   }
 
-  &__link {
-    text-decoration: none;
-    font-size: var(--3-fs-text);
-    @include mixin.text-bold;
-    color: inherit;
-    outline: none;
+  &__link-item {
+    padding: fn.px-to-rem(12px);
+    border-radius: fn.px-to-rem(8px);
+    background-color: var(--3-bg-color-element);
+    cursor: pointer;
+
+    /* Accessibility: reduce animations when motion is disabled on user browser/OS system */
+    @media (prefers-reduced-motion: reduce) {
+      transition: 1s;
+    }
+
+    @media (min-width: fn.px-to-em(viewport.$desktop)) {
+      transition: background-color .8s ease, color .8s ease;
+
+      &:hover,
+      &:focus-within {
+        transition: background-color .1s ease, color .1s ease;
+        background-color: var(--3-color-secondary);
+        color: var(--3-color-hover);
+      }
+    }
+
+    & > a {
+      text-decoration: none;
+      font-size: var(--3-fs-text);
+      @include mixin.text-bold;
+      color: inherit;
+      outline: none;
+    }
   }
 }
