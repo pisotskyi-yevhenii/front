@@ -6,4 +6,14 @@
   display: flex;
   flex-direction: column;
   gap: fn.px-to-rem(24px);
+
+  // First on page: If "~ &" does not have sibling "&" before) - so it is the 1st on page
+  &:not(& ~ &) {
+    padding-block-start: 0;
+  }
+
+  // Last on page: If "&" does not have sibling "~ &" after - so it is the last
+  &:not(:has(~ &)) {
+    padding-block-end: 0;
+  }
 }

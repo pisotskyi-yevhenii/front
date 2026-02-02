@@ -4,6 +4,16 @@
 .preview {
   padding-block-end: calc(#{fn.px-to-rem(40px)} - var(--4-padding-block-section));
 
+  // If ".preview" go after ".section-container" - set padding as for other
+  .section-container ~ & {
+    padding-block-end: var(--4-padding-block-section);
+  }
+
+  // If ".preview" does not have sibling ".section-container" - so ".preview" is the last - remove padding-bottom
+  &:not(:has(~ .section-container)) {
+    padding-block-end: 0;
+  }
+
   img {
     display: block;
     width: 100vw;
