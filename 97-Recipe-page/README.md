@@ -2,7 +2,7 @@
 
 https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm
 
-### My solution: https://pisotskyi-yevhenii.github.io/front/4-Recipe-page/
+### My solution: https://pisotskyi-yevhenii.github.io/front/97-Recipe-page/
 
 ### Built with
 
