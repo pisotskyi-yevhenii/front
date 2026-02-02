@@ -2,7 +2,7 @@
 
 https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H
 
-### My solution: https://pisotskyi-yevhenii.github.io/front/1-QR-code-component/
+### My solution: https://pisotskyi-yevhenii.github.io/front/100-QR-code-component/
 
 ### Built with
 
