@@ -2,7 +2,7 @@
 
 https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ
 
-### My solution: https://pisotskyi-yevhenii.github.io/front/3-Social-links-profile/
+### My solution: https://pisotskyi-yevhenii.github.io/front/98-Social-links-profile/
 
 ### Built with
 
