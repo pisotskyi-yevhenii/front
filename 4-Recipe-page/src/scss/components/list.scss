@@ -1,0 +1,57 @@
+@use '../base/functions' as fn;
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: fn.px-to-rem(8px);
+  padding-inline-start: fn.px-to-rem(8px);
+  list-style-position: inside;
+
+  & > li {
+    font-weight: 400;
+    font-size: var(--4-font-size-s);
+    line-height: 1.5;
+    position: relative;
+    padding-inline-start: fn.px-to-rem(32px);
+  }
+
+  & > li strong {
+    font-weight: 700;
+  }
+
+  &--unordering {
+    list-style: none;
+
+    & > li::before {
+      --marker-size: #{fn.px-to-rem(4px)};
+      content: '';
+      display: block;
+      width: var(--marker-size);
+      height: var(--marker-size);
+      border-radius: 50%;
+      background-color: var(--4-color-heading-accent-1);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--ordering {
+    list-style: none;
+    counter-reset: item;
+
+    & > li {
+      counter-increment: item;
+    }
+
+    & > li::before {
+      content: counter(item) '.';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+      color: var(--4-color-heading-accent-1);
+    }
+  }
+}

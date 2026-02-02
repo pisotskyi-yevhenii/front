@@ -1,0 +1,23 @@
+// ====================================================
+// TOKENS – raw / base values
+// Do NOT use these Tokens directly in other CSS/SCSS!
+// Only used them inside variables.scss
+// ====================================================
+
+:root {
+  // Tokens: Colors
+  --__4-rose-50: hsl(330, 100%, 98%, 1);
+  --__4-rose-800: hsl(332, 51%, 32%, 1);
+
+  --__4-stone-900: hsl(24, 5%, 18%, 1);
+  --__4-stone-600: hsl(30, 10%, 34%, 1);
+  --__4-stone-150: hsl(30, 18%, 87%, 1);
+  --__4-stone-100: hsl(30, 54%, 90%, 1);
+
+  --__4-brown-800: hsl(14, 45%, 36%, 1);
+
+  --__4-white: hsl(0, 0%, 100%, 1);
+
+  // Tokens: Font sizes
+  --__4-base-16px: 16px;
+}

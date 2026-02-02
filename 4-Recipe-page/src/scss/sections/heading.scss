@@ -1,0 +1,20 @@
+@use '../base/functions' as fn;
+@use '../base/viewports';
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: fn.px-to-rem(24px);
+
+  &__title {
+    font-size: fn.fluid-clamp(36px, 40px, viewports.$mobile, viewports.$tablet);
+    color: var(--4-color-heading);
+  }
+
+  &__description {
+    font-size: var(--4-font-size-s);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+}

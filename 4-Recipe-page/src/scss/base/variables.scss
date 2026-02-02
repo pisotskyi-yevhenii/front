@@ -1,0 +1,38 @@
+// =============================================
+//  Variables allow to centralize design,
+//  making it easier to maintain / update
+//  without recompiling Sass
+// =============================================
+
+// =============================================
+// Variables – use everywhere. These reference tokens.
+// =============================================
+
+@use '../base/design-tokens';
+
+:root {
+  // Color
+  --4-color-heading: var(--__4-stone-900);
+  --4-color-text: var(--__4-stone-600);
+  --4-color-heading-accent-1: var(--__4-brown-800);
+  --4-color-heading-accent-2: var(--__4-rose-800);
+
+  --4-bg-body: var(--__4-stone-100);
+  --4-bg-text: var(--__4-white);
+  --4-bg-accent: var(--__4-rose-50);
+
+  --4-color-border: var(--__4-stone-150);
+
+  // Font
+  --4-font-family-heading: 'Young Serif', system-ui, sans-serif;
+  --4-font-family-text: 'Outfit', system-ui, sans-serif;
+
+  --4-font-size-s: calc(16px / var(--__4-base-16px) * 1rem);
+  --4-font-size-m: calc(20px / var(--__4-base-16px) * 1rem);
+  --4-font-size-l: calc(28px / var(--__4-base-16px) * 1rem);
+  --4-font-size-xl: calc(36px / var(--__4-base-16px) * 1rem);
+  --4-font-size-xxl: calc(40px / var(--__4-base-16px) * 1rem);
+
+  // Space
+  --4-padding-block-section: calc(calc(32px / 2) / var(--__4-base-16px) * 1rem);
+}

@@ -1,0 +1,22 @@
+@use '../base/functions' as fn;
+@use '../base/viewports';
+
+.preview {
+  padding-block-end: calc(#{fn.px-to-rem(40px)} - var(--4-padding-block-section));
+
+  img {
+    display: block;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: fn.px-to-em(viewports.$mobile-plus-1px)) {
+      max-width: 100%;
+      margin: 0;
+      transform: none;
+      border-radius: fn.px-to-rem(12px);
+      height: fn.fluid-clamp(171px, 300px, viewports.$mobile, viewports.$tablet);
+      object-fit: cover;
+    }
+  }
+}

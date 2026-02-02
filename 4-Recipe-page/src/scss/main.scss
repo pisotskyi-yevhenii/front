@@ -1,0 +1,8 @@
+@use 'base/fonts';
+@use 'base/variables';
+@use 'base/viewports';
+
+// To include whole folder, inside folder must be index.scss which include inner files
+@use 'layouts';
+@use 'components';
+@use 'sections';

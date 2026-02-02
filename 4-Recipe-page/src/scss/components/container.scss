@@ -1,0 +1,9 @@
+@use '../base/functions' as fn;
+@use '../base/viewports';
+
+.section-container {
+  padding-block: var(--4-padding-block-section);
+  display: flex;
+  flex-direction: column;
+  gap: fn.px-to-rem(24px);
+}

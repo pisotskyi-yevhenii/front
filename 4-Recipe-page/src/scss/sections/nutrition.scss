@@ -1,0 +1,47 @@
+@use '../base/functions' as fn;
+
+.nutrition {
+
+  &__description {
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  &__table {
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  &__table tr {
+    display: flex;
+    gap: fn.px-to-rem(16px);
+    padding: fn.px-to-rem(12px) fn.px-to-rem(32px);
+  }
+
+  &__table tr:not(:last-child) {
+    border-bottom: 1px solid var(--4-color-border);
+  }
+
+  &__table tr:first-child {
+    padding-block-start: 0;
+  }
+
+  &__table tr:last-child {
+    padding-block-end: 0;
+  }
+
+  &__table th,
+  &__table td {
+    line-height: 1.42;
+    flex: 1 1 0;
+  }
+
+  &__table th {
+    font-weight: 400;
+  }
+
+  &__table td {
+    font-weight: 700;
+    color: var(--4-color-heading-accent-1);
+  }
+}

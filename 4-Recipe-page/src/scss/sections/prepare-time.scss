@@ -1,0 +1,25 @@
+@use '../base/functions' as fn;
+
+.prepare-time {
+  padding-block: var(--4-padding-block-section);
+
+  &__content {
+    background-color: var(--4-bg-accent);
+    padding: fn.px-to-rem(24px);
+    border-radius: fn.px-to-rem(12px);
+    display: flex;
+    flex-direction: column;
+    gap: fn.px-to-rem(16px);
+  }
+
+  &__title {
+    font-family: var(--4-font-family-text);
+    font-weight: 600;
+    font-size: var(--4-font-size-m);
+    color: var(--4-color-heading-accent-2);
+  }
+
+  &__description > li::before {
+    background-color: var(--4-color-heading-accent-2);
+  }
+}

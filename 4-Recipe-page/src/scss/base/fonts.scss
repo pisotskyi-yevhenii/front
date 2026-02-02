@@ -1,0 +1,24 @@
+/*
+ Woff2 - supported all browser
+ In inspector browser for all font-weight of variable font uses the same name
+
+ Path '../fonts/' is correct, all scss imported in main.scss
+ */
+
+// https://fonts.google.com/specimen/Young+Serif/about (see link on GitHub)
+@font-face {
+  src: url('../fonts/Young-Serif/Young-Serif-Regular.woff2') format('woff2');
+  font-family: 'Young Serif';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// https://fonts.google.com/specimen/Outfit/about (see link on GitHub)
+@font-face {
+  src: url('../fonts/Outfit/Outfit-variable-wght.woff2') format('woff2');
+  font-family: 'Outfit';
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

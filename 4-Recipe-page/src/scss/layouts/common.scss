@@ -1,0 +1,67 @@
+@use '../base/functions' as fn;
+@use '../base/viewports';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; // best practice for stability unexpected overriding
+
+  /*@media screen and (min-width: fn.px-to-em(1400px)) {
+    //overflow-y: scroll; // ! only for development. Set vertical scroll on desktop. For mobile it is unnecessary
+  }*/
+}
+
+body {
+  // never use on body layout properties (width, margin, padding, ect.). Move them in wrapper.
+  font-family: var(--4-font-family-text);
+  color: var(--4-color-text);
+}
+
+#wrapper {
+  min-height: 100dvh;
+
+  @media (min-width: fn.px-to-em(viewports.$mobile-plus-1px)) {
+    background-color: var(--4-bg-body);
+    padding-block: fn.fluid-clamp(0px, 128px, viewports.$mobile-plus-1px, viewports.$tablet);
+  }
+}
+
+.main {
+  padding-inline: fn.fluid-clamp(32px, 40px, viewports.$mobile, viewports.$tablet);
+  padding-block-end: fn.px-to-rem(40px);
+  margin: auto;
+  background-color: var(--4-bg-text);
+  border-radius: fn.px-to-rem(24px);
+  max-width: fn.fluid-clamp(375px, 616px, viewports.$mobile, viewports.$tablet);
+
+  @media (min-width: fn.px-to-em(viewports.$mobile-plus-1px)) {
+    padding-block-start: fn.fluid-clamp(32px, 40px, viewports.$mobile, viewports.$tablet);
+  }
+
+  @media (min-width: fn.px-to-em(viewports.$tablet)) {
+    max-width: fn.fluid-clamp(616px, 736px, viewports.$tablet, viewports.$desktop);
+  }
+}
+
+hr {
+  background-color: var(--4-color-border);
+  border-style: none;
+  height: fn.px-to-rem(1px);
+  margin-block: var(--4-padding-block-section);
+}
+
+.h1,
+h1,
+.h2,
+h2 {
+  font-family: var(--4-font-family-heading);
+  font-size: var(--4-font-size-l);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--4-color-heading-accent-1);
+}
