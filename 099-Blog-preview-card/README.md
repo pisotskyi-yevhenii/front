@@ -2,7 +2,7 @@
 
 https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS
 
-### My solution: https://pisotskyi-yevhenii.github.io/front/99-Blog-preview-card/
+### My solution: https://pisotskyi-yevhenii.github.io/front/099-Blog-preview-card/
 
 ### Built with
 

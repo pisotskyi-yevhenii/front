@@ -2,16 +2,17 @@
 
 https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm
 
-### My solution: https://pisotskyi-yevhenii.github.io/front/97-Recipe-page/
+### My solution: https://pisotskyi-yevhenii.github.io/front/097-Recipe-page/
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- SCSS
 - Mobile-first workflow
 - Pixel-perfect, Responsive
+- Semantic HTML5 markup
+- CSS custom properties
+- SCSS
+- Flexbox
+- webpack, npm
 
 ### All my solution: https://pisotskyi-yevhenii.github.io/front/
 

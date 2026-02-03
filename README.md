@@ -1,12 +1,13 @@
-## My experience of frontend development
+### List of all my projects, from newest to oldest (GitHub Pages):
 
-### Built from scratch using a Figma design from Frontend Mentor (https://www.frontendmentor.io/)
+### https://pisotskyi-yevhenii.github.io/front/
 
-### Techniques used:
+There my experience of frontend development. Used Figma designs from online service "Frontend
+Mentor": ( https://www.frontendmentor.io/ )
 
-- Responsive, Mobile-First, Pixel-Perfect
-- SEO, Accessibility
-- SoC principle: Webpack, npm
+### Web-tech:
+
+- Mobile-First, Responsive, Pixel-Perfect
 - Semantic HTML5, BEM, SCSS, FlexBox, Grid, Javascript
-
-### Project list URL from newest to oldest (GitHub Pages): https://pisotskyi-yevhenii.github.io/front/
+- SoC principle: Webpack, npm
+- SEO, Accessibility
