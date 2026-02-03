@@ -21,7 +21,7 @@ body {
   color: var(--4-color-text);
 }
 
-#wrapper {
+[id='wrapper'] {
   min-height: 100dvh;
 
   @media (min-width: fn.px-to-em(viewports.$mobile-plus-1px)) {

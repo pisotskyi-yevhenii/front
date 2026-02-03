@@ -2,7 +2,8 @@
 @use '../base/viewports';
 
 .preview {
-  padding-block-end: calc(#{fn.px-to-rem(40px)} - var(--4-padding-block-section));
+  $padding-bottom: fn.px-to-rem(40px); // do not use interpolation (#{}) inside a calc() - not optimize
+  padding-block-end: calc($padding-bottom - var(--4-padding-block-section));
 
   // If ".preview" go after ".section-container" - set padding as for other
   .section-container ~ & {
@@ -17,7 +18,7 @@
   img {
     display: block;
     width: 100vw;
-    margin-left: 50%;
+    margin-inline-start: 50%;
     transform: translateX(-50%);
 
     @media (min-width: fn.px-to-em(viewports.$mobile-plus-1px)) {

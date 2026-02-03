@@ -6,11 +6,9 @@ https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm
 
 ### Built with
 
-- Mobile-first workflow
-- Pixel-perfect, Responsive
-- Semantic HTML5 markup
-- CSS custom properties
-- SCSS
+- Mobile-first, Responsive, Pixel-perfect
+- Semantic HTML5, BEM
+- SCSS, CSS variables
 - Flexbox
 - webpack, npm
 
