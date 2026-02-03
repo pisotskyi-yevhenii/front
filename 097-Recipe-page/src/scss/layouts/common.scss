@@ -21,7 +21,7 @@ body {
   color: var(--4-color-text);
 }
 
-[id='wrapper'] {
+.main {
   min-height: 100dvh;
 
   @media (min-width: fn.px-to-em(viewports.$mobile-plus-1px)) {
@@ -30,7 +30,7 @@ body {
   }
 }
 
-.main {
+.article {
   padding-inline: fn.fluid-clamp(32px, 40px, viewports.$mobile, viewports.$tablet);
   padding-block-end: fn.px-to-rem(40px);
   margin: auto;
