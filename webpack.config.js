@@ -39,6 +39,9 @@ function getPages() {
 
 const pages = getPages();
 
+// To print issues at the end of terminal for last developing project. Added after change logic of naming projects
+pages.reverse();
+
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
 
@@ -86,8 +89,9 @@ module.exports = (env, argv) => {
     ],
     watch: !isProd,
     performance: {
-      hints: 'warning',
-      maxAssetSize: 400000, //400 KiB - prevents warning due to size of InterVariable.woff2 in 3- project
-    }
+      hints: 'warning', // If any file is too big, - show yellow warning in terminal (do not fail the build)
+      maxAssetSize: 400000, // (default 250 KiB). Prevents warning due to size of file InterVariable.woff2 in project
+    },
+    stats: 'errors-warnings', // To see less success outputs in terminal and full report of issues
   }));
 };
