@@ -40,7 +40,8 @@ $p096-bp-mobile: 630;
   &__content {
     padding: base.px-to-rem(32);
     // create a break if an entire word cannot be placed on its own line without overflowing.
-    word-break: break-word;
+    overflow-wrap: break-word;
+    min-width: 0; // add to overflow-wrap. Allows container to shrink below the "intrinsic size" of the long word
 
     // Layout
     display: flex;

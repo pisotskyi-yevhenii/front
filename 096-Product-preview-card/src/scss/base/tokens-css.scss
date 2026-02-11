@@ -13,9 +13,7 @@
   @each $name, $value in bp.$breakpoints {
     --096-#{$name}: #{fn.px-to-em($value)};
   }
-}
-
-:root {
+  
   // Colors
   --096-white: hsl(0, 0%, 100%, 1);
   --096-cream: hsl(30, 38%, 92%, 1);

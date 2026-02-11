@@ -9,7 +9,7 @@
   background-color: var(--096-green-500);
   color: var(--096-white);
   inline-size: 100%;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 
   // Inner Layout
   display: flex;
@@ -25,7 +25,7 @@
     }
 
     &:active {
-      transform: scale(0.99);
+      transform: scale(0.98);
     }
   }
 
