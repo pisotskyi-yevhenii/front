@@ -34,11 +34,10 @@ body {
     padding-block: base.px-to-rem(80);
   }
 
-  @media (min-width: base.px-to-em(base.$tablet-s)) and (orientation: portrait) {
-    padding-block: base.px-to-rem(286);
-  }
-
-  @media (min-width: base.px-to-em(base.$tablet-m)) {
-    padding-block: base.fluid-clamp(286, 289, base.$tablet-m, base.$desktop);
+  @media (min-width: base.px-to-em(base.$tablet-s)) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
