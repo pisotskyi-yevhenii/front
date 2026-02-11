@@ -1,0 +1,48 @@
+@use "sass:math";
+
+/* Vars*/
+//$root-font-size: 16px;
+$root-font-size: 16;
+
+/* Functions */
+@function px-to-em($px) {
+  /*@if math.unit($px) != "px" {
+    @error "@function px-to-em(): passed value must be with px unit";
+  }*/
+  @return math.div($px, $root-font-size) * 1em;
+}
+
+@function px-to-rem($px) {
+  /*@if math.unit($px) != "px" {
+    @error "@function px-to-rem(): passed value must be with px unit";
+  }*/
+  @return math.div($px, $root-font-size) * 1rem;
+}
+
+@function fluid-clamp($min_px, $max_px, $min_bp_px, $max_bp_px) {
+  /*@if math.unit($min_px) != "px"
+  or math.unit($max_px) != "px"
+  or math.unit($min_vw_px) != "px"
+  or math.unit($max_vw_px) != "px" {
+    @error "@function fluid-clamp(): all passed values must be with px unit";
+  }*/
+
+  // Strip px units completely
+  //$min: math.div($min_px, 1px);
+  //$max: math.div($max_px, 1px);
+
+  //$min_vw: math.div($min_vw_px, 1px);
+  //$max_vw: math.div($max_vw_px, 1px);
+
+  //$slope-unitless: math.div($max - $min, $max_vw - $min_vw);
+  //$intercept-value: math.div($min - $slope-unitless * $min_vw, math.div($root-font-size, 1px));
+
+  $slope-unitless: math.div(($max_px - $min_px), ($max_bp_px - $min_bp_px));
+  $intercept-value: math.div(($min_px - $slope-unitless * $min_bp_px), $root-font-size);
+
+  @return clamp(
+    px-to-rem($min_px),
+    #{$intercept-value}rem + #{$slope-unitless * 100}vw,
+    px-to-rem($max_px)
+  );
+}

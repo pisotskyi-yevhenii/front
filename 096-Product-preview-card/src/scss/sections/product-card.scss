@@ -1,0 +1,88 @@
+@use '../base';
+
+$p096-bp-mobile: 630;
+
+.product-card-section {
+  background-color: var(--096-white);
+  max-inline-size: base.px-to-rem(350);
+  margin-inline: auto;
+
+  // Layout
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: base.px-to-em(base.$mobile-m)) {
+    border-radius: var(--096-border-radius-2xs);
+    overflow: hidden;
+  }
+
+  @media (min-width: base.px-to-em($p096-bp-mobile)) {
+    grid-template-columns: 1fr 1fr;
+    max-inline-size: base.px-to-rem(600);
+  }
+
+  &__figure {
+    aspect-ratio: 350 / 342;
+
+    @media (min-width: base.px-to-em($p096-bp-mobile)) {
+      aspect-ratio: 300 / 456;
+    }
+
+    img {
+      display: block;
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__content {
+    padding: base.px-to-rem(32);
+    // create a break if an entire word cannot be placed on its own line without overflowing.
+    word-break: break-word;
+
+    // Layout
+    display: flex;
+    flex-direction: column;
+    gap: base.px-to-rem(24);
+
+    @media (min-width: base.px-to-em($p096-bp-mobile)) {
+      gap: base.px-to-rem(32);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: base.px-to-rem(24);
+  }
+
+  &__category {
+    font-family: var(--096-font-family-primary);
+    font-weight: 500;
+    font-size: var(--096-font-size-3xs);
+    line-height: 1.2;
+    letter-spacing: base.px-to-rem(5);
+    color: var(--096-grey);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-family: var(--096-font-family-accent);
+    font-weight: 700;
+    font-size: var(--096-font-size-xl);
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--096-black);
+  }
+
+  &__text {
+    font-family: var(--096-font-family-primary);
+    font-weight: 500;
+    font-size: var(--096-font-size-xs);
+    line-height: 1.57;
+    letter-spacing: 0;
+    color: var(--096-grey);
+  }
+}

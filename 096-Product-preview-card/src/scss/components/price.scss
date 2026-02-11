@@ -1,0 +1,30 @@
+@use '../base';
+
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: base.px-to-rem(16);
+
+  &__current {
+    font-family: var(--096-font-family-accent);
+    font-weight: 700;
+    font-size: var(--096-font-size-xl);
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--096-green-500);
+  }
+
+  &__old {
+    font-family: var(--096-font-family-primary);
+    font-weight: 500;
+    font-size: var(--096-font-size-2xs);
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: var(--096-grey);
+    text-decoration-line: line-through;
+    text-decoration-thickness: base.px-to-rem(0.5);
+    margin-block-start: base.px-to-rem(1); // adjusting centering text in one line because of different line-height
+  }
+}

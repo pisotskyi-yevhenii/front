@@ -1,0 +1,45 @@
+// =============================================
+// Variables allow to centralize design,
+// making it easier to maintain
+// update without recompiling Sass
+// change value for variable instead of n files
+// =============================================
+
+@use 'functions' as fn;
+@use 'breakpoints' as bp;
+
+:root {
+  // Automatically export breakpoints to CSS just for info in debug case
+  @each $name, $value in bp.$breakpoints {
+    --096-#{$name}: #{fn.px-to-em($value)};
+  }
+}
+
+:root {
+  // Colors
+  --096-white: hsl(0, 0%, 100%, 1);
+  --096-cream: hsl(30, 38%, 92%, 1);
+  --096-grey: hsl(228, 12%, 48%, 1);
+  --096-green-500: hsl(158, 36%, 37%, 1);
+  --096-green-700: hsl(158, 42%, 18%, 1);
+  --096-black: hsl(212, 21%, 14%, 1);
+
+  // Font sizes
+  --096-font-family-primary: 'Montserrat', system-ui, sans-serif;
+  --096-font-family-accent: 'Fraunces', system-ui, sans-serif;
+
+  --096-font-size-3xs: #{fn.px-to-rem(12)};
+  --096-font-size-2xs: #{fn.px-to-rem(13)};
+  --096-font-size-xs: #{fn.px-to-rem(14)};
+  //--096-font-size-s:
+  //--096-font-size-base:
+  //--096-font-size-m:
+  //--096-font-size-l:
+  --096-font-size-xl: #{fn.px-to-rem(32)};
+  //--096-font-size-2xl:
+  //--096-font-size-3xl:
+
+  // Border-radius
+  --096-border-radius-3xs: #{fn.px-to-rem(4)};
+  --096-border-radius-2xs: #{fn.px-to-rem(8)};
+}

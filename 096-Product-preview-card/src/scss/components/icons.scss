@@ -1,0 +1,5 @@
+@use '../base';
+
+.icon-shop-cart {
+  @include base.icon-shop-cart;
+}

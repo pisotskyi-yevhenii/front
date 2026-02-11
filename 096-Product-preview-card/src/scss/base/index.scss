@@ -1,0 +1,5 @@
+// with @forward in component you can add name of folder (@use '../base') and use any var, function, mixin: (base.----)
+@forward 'breakpoints';
+@forward 'functions';
+@forward 'mixins';
+@forward 'mixins-icons';

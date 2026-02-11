@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pisotskyi: Product preview card component</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg">
+  <link rel="shortcut icon" href="../favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+
+  <!-- SEO purpose -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Product preview card component">
+
+  <link rel="stylesheet" href="dist/bundle.min.css">
+</head>
+<body>
+  <div id="wrapper">
+    <main class="main">
+
+      <section class="product-card-section">
+        <figure class="product-card-section__figure">
+          <img
+            src="content/product-img.webp"
+            alt="Gabrielle Essence Eau De Parfum"
+          >
+          <!--Do not use (loading="lazy" decoding="async") for images that are likely to be on 1st screen page loading-->
+        </figure>
+        <div class="product-card-section__content">
+          <header class="product-card-section__header">
+            <span class="product-card-section__category">perfume</span>
+            <h1 class="product-card-section__title">Gabrielle Essence Eau De Parfum</h1>
+            <p class="product-card-section__text">
+              A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of
+              CHANEL.
+            </p>
+          </header>
+          <div class="price">
+            <span class="price__current">$149.99</span>
+            <span class="price__old">$169.99</span>
+          </div>
+          <button class="button" type="button" data-product-id="1">
+            <i class="icon-shop-cart"></i>
+            <span class="button__text">Add to Cart</span>
+          </button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script src="dist/bundle.min.js" defer></script>
+</body>
+</html>

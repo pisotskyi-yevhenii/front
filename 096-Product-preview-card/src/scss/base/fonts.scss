@@ -1,0 +1,24 @@
+/*
+woff2 - supported all browser.
+In browser console (Elements->Computed->Rendered Fonts) variable font uses the same name for any font-weight value
+
+https://fonts.google.com/ (to get correct woff2 see link on GitHub on tab "About" of chosen font)
+
+Path below '../fonts/' is correct, - all scss imported in main.scss
+*/
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat/Montserrat[wght].woff2') format('woff2');
+  font-style: normal; // for italic need use separate woff2 file
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('../fonts/Fraunces/Fraunces[SOFT,WONK,opsz,wght].woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}

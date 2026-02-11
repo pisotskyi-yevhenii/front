@@ -1,0 +1,38 @@
+@use '../base';
+
+.button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: var(--096-border-radius-2xs);
+  padding: base.px-to-rem(16);
+  background-color: var(--096-green-500);
+  color: var(--096-white);
+  inline-size: 100%;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+
+  // Inner Layout
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: base.px-to-rem(8);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:focus-visible {
+      background-color: var(--096-green-700);
+    }
+
+    &:active {
+      transform: scale(0.99);
+    }
+  }
+
+  &__text {
+    font-family: var(--096-font-family-primary);
+    font-weight: 700;
+    font-size: var(--096-font-size-xs);
+    line-height: 1.3;
+  }
+}
