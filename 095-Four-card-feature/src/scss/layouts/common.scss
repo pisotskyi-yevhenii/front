@@ -31,7 +31,7 @@ body {
   }
 
   @media (min-width: base.px-to-em(base.$tablet-m)) {
-    padding-block-start: base.fluid-clamp(50, 72, base.$tablet-m, base.$desktop);
+    padding-block-start: base.fluid-clamp(43, 65, base.$tablet-m, base.$desktop);
   }
 }
 
