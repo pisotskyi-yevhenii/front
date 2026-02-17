@@ -1,0 +1,17 @@
+@use '../base';
+
+.icon-card-homepage {
+  @include base.icon-card-homepage(base.px-to-rem(64));
+}
+
+.icon-card-idea {
+  @include base.icon-card-idea(base.px-to-rem(64));
+}
+
+.icon-card-search {
+  @include base.icon-card-search(base.px-to-rem(64));
+}
+
+.icon-card-software {
+  @include base.icon-card-software(base.px-to-rem(64));
+}

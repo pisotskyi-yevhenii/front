@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+// $p094- (project #094)
+
+$breakpoints: (
+  'mobile': 375,
+  'tablet-s': 768,
+  'tablet-m': 1024,
+  'wide': 1280,
+  'desktop': 1440,
+);
+
+// Variables for convenient use in code
+$mobile: map.get($breakpoints, 'mobile');
+$tablet-s: map.get($breakpoints, 'tablet-s');
+$tablet-m: map.get($breakpoints, 'tablet-m');
+$wide: map.get($breakpoints, 'wide');
+$desktop: map.get($breakpoints, 'desktop');

@@ -1,0 +1,64 @@
+@use "sass:math";
+@use "sass:string";
+
+/* Vars*/
+$root-font-size: 16;
+
+/* Functions */
+@function px-to-em($px) {
+  @if math.unit($px) == "px" {
+    $px: math.div($px, 1px); // Strip px units completely
+  }
+  
+  @return math.div($px, $root-font-size) * 1em;
+}
+
+@function px-to-rem($px) {
+  @if math.unit($px) == "px" {
+    $px: math.div($px, 1px); // Strip px units completely
+  }
+
+  @return math.div($px, $root-font-size) * 1rem;
+}
+
+@function fluid-clamp($min_px, $max_px, $min_bp_px, $max_bp_px) {
+  // Strip px units completely
+  @if math.unit($min_px) == "px" {
+    $min_px: math.div($min_px, 1px);
+  }
+
+  @if math.unit($max_px) == "px" {
+    $max_px: math.div($max_px, 1px);
+  }
+
+  @if math.unit($min_bp_px) == "px" {
+    $min_bp_px: math.div($min_bp_px, 1px);
+  }
+
+  @if math.unit($max_bp_px) == "px" {
+    $max_bp_px: math.div($max_bp_px, 1px);
+  }
+
+  $slope-unitless: math.div(($max_px - $min_px), ($max_bp_px - $min_bp_px));
+  $intercept-value: math.div(($min_px - $slope-unitless * $min_bp_px), $root-font-size);
+
+  @return clamp(
+    px-to-rem($min_px),
+    #{$intercept-value}rem + #{$slope-unitless * 100}vw,
+    px-to-rem($max_px)
+  );
+}
+
+@function encode-svg($svg-string) {
+  $encoded: "";
+  $slice: $svg-string;
+  $index: string.index($slice, "#");
+
+  @while $index {
+    $encoded: $encoded + string.slice($slice, 1, $index - 1) + "%23";
+    $slice: string.slice($slice, $index + 1);
+    $index: string.index($slice, "#");
+  }
+
+  @return $encoded + $slice;
+}

@@ -1,0 +1,85 @@
+@use '../base';
+
+.feature {
+  $padding-block: base.px-to-rem(32);
+  position: relative;
+  inline-size: 100%;
+  max-inline-size: base.px-to-rem(314);
+  min-block-size: base.px-to-rem(250);
+  padding: $padding-block;
+  margin-inline: auto;
+  border-radius: var(--095-border-radius-2xs);
+  background-color: var(--095-color-white-100);
+  box-shadow: var(--095-box-shadow);
+  text-align: left;
+  overflow: auto;
+
+  > [class^='icon-'] {
+    position: absolute;
+    inset-inline-end: $padding-block;
+    inset-block-end: ($padding-block + base.px-to-rem(15));
+  }
+
+  @media (min-width: base.px-to-em(base.$tablet-m)) {
+    max-inline-size: base.fluid-clamp(314, 350, base.$tablet-m, base.$desktop);
+    // aspect-ratio: 314 / 250; // effect grow width and height
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    height: 4px;
+    background-color: var(--095-color-grey-400);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &--cyan {
+    grid-area: c;
+  }
+
+  &--red {
+    grid-area: r;
+  }
+
+  &--orange {
+    grid-area: o;
+  }
+
+  &--blue {
+    grid-area: b;
+  }
+
+  &--cyan:before {
+    background-color: var(--095-color-cyan);
+  }
+
+  &--red:before {
+    background-color: var(--095-color-red);
+  }
+
+  &--orange:before {
+    background-color: var(--095-color-orange);
+  }
+
+  &--blue:before {
+    background-color: var(--095-color-blue);
+  }
+
+  &__name {
+    font-size: var(--095-font-size-m);
+    line-height: 1.35;
+    @include base.font-weight-style-letterSpacing(600, normal, 0);
+    color: var(--095-color-grey-500);
+    margin-block-end: base.px-to-rem(6);
+  }
+
+  &__description {
+    font-size: var(--095-font-size-2xs);
+    line-height: 1.6;
+    @include base.font-weight-style-letterSpacing(400, normal, base.px-to-rem(0.09));
+    color: var(--095-color-grey-400);
+  }
+}

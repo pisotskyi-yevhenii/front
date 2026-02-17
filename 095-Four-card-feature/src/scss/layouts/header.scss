@@ -1,0 +1,39 @@
+@use '../base';
+
+.header {
+  padding-block: base.fluid-clamp(30, 37, base.$mobile-m, base.$tablet-s);
+  inline-size: 100%;
+  max-inline-size: base.px-to-rem(316);
+  margin-inline: auto;
+  text-align: center;
+  color: var(--095-color-grey-500);
+
+  // layout
+  display: flex;
+  flex-direction: column;
+  gap: base.px-to-rem(16);
+
+  @media (min-width: base.px-to-em(base.$mobile-m)) {
+    inline-size: base.fluid-clamp(316, 540, base.$mobile-m, base.$tablet-s);
+    max-inline-size: unset;
+  }
+
+  &__title {
+    > h1,
+    > h2 {
+      font-size: base.fluid-clamp(24, 36, base.$mobile-m, base.$tablet-s);
+      line-height: 1.4;
+      @include base.font-weight-style-letterSpacing(200, normal, base.px-to-rem(0.25));
+    }
+
+    > h2 {
+      font-weight: 600;
+    }
+  }
+
+  &__text {
+    font-size: var(--095-font-size-s);
+    line-height: 1.4;
+    @include base.font-weight-style-letterSpacing(400, normal, base.px-to-rem(0.1));
+  }
+}

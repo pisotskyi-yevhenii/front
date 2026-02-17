@@ -1,0 +1,72 @@
+@use 'functions' as fn;
+
+@mixin base-icon-mask-style($size: fn.px-to-rem(24)) {
+  content: '';
+  display: inline-block;
+  width: $size;
+  height: $size;
+  mask-size: $size;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  background-color: currentColor;
+  transition: color 0.3s linear, transform 0.3s linear;
+}
+
+@mixin base-icon-image-style($size: fn.px-to-rem(24)) {
+  content: '';
+  display: inline-block;
+  width: $size;
+  height: $size;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s linear;
+}
+
+@mixin icon-card-homepage($sizeIcon: fn.px-to-rem(64)) {
+  $svg-raw: 'data:image/svg+xml,<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"> <g id="icon-homepage"> <path id="Path" d="M64 14.4541V56.2424H0V14.4541L3.75 10.6667H60.25L64 14.4541Z" fill="#EFEFF4"/> <path id="Path_2" d="M64 14.4541V56.2424H32V10.6667H60.25L64 14.4541Z" fill="#DADAE5"/> <path id="Path_3" d="M0 0H64V15.5152H0V0Z" fill="#474F54"/> <path id="Path_4" d="M32 0H64V15.5152H32V0Z" fill="#32393F"/> <g id="Group"> <path id="Path_5" d="M7.75781 5.81818H11.4427V9.69696H7.75781V5.81818Z" fill="#FF637B"/> <path id="Path_6" d="M15.1279 5.81818H18.8128V9.69696H15.1279V5.81818Z" fill="#FF637B"/> <path id="Path_7" d="M22.4971 5.81818H26.1819V9.69696H22.4971V5.81818Z" fill="#FF637B"/> </g> <path id="Path_8" d="M45.5754 42.2453V64H34.3546V60.2898H30.6143V64H19.3936V42.2453L30.7638 32.9697H33.8686L45.5754 42.2453Z" fill="#FF637B"/> <path id="Path_9" d="M11.6367 22.303H53.3337V26.1818H11.6367V22.303Z" fill="#DADAE5"/> <path id="Path_10" d="M32 22.303H52.3636V26.1818H32V22.303Z" fill="#C9C9D3"/> <path id="Path_11" d="M45.5758 42.2453V64H33.9394V60.2898H32V32.9697H33.4354L45.5758 42.2453Z" fill="#E63950"/> <path id="Path_12" d="M30.0605 45.5758H33.9393V49.4545H30.0605V45.5758Z" fill="#EFEFF4"/> <path id="Path_13" d="M32 45.5758H33.9394V49.4545H32V45.5758Z" fill="#DADAE5"/> <path id="Path_14" d="M50.4247 45.7793L47.9728 48.4848L32.4853 34.9586L16.9978 48.4848L14.5459 45.7793L32.4853 30.0606L50.4247 45.7793Z" fill="#676E74"/> <path id="Path_15" d="M32 30.0606L50.4242 45.7793L47.9061 48.4848L32 34.9586L32 30.0606Z" fill="#474F54"/> </g> </svg>';
+  $svg-encoded: fn.encode-svg($svg-raw);
+  $url-svg: url($svg-encoded);
+
+  @include base-icon-image-style($size: $sizeIcon);
+
+  //-webkit-mask-image: $url-svg;
+  //mask-image: $url-svg;
+  background-image: $url-svg;
+}
+
+@mixin icon-card-idea($sizeIcon: fn.px-to-rem(64)) {
+  $svg-raw: 'data:image/svg+xml,<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"> <g id="Icon-idea"> <path id="Path" d="M26.375 52.625H37.625V64H26.375V52.625Z" fill="#676E74"/> <path id="Path_2" d="M32 52.625H37.625V64H32V52.625Z" fill="#333637"/> <path id="Path_3" d="M22.625 47H41.375V56.375H22.625V47Z" fill="#4C545A"/> <path id="Path_4" d="M32 47H41.375V56.375H32V47Z" fill="#52585C"/> <path id="Path_5" d="M45.0122 36.7251C42.6875 38.6377 41.375 41.3374 41.375 44.1499V47H22.625V44.1499C22.625 41.2998 21.3872 38.6377 19.3252 37.0249C14.2627 33.0874 11.375 27.1626 11.375 20.75C11.375 14.5249 14.1499 8.67529 18.9878 4.7373C22.7002 1.7373 27.2373 0 32 0C33.4624 0 34.9624 0.149902 36.4248 0.450195C44.5249 2.1377 50.8999 8.8999 52.3252 17.1128C53.6001 24.6128 50.8999 31.9624 45.0122 36.7251Z" fill="#FFDA2D"/> <path id="Path_6" d="M45.0122 36.7251C42.6875 38.6377 41.375 41.3374 41.375 44.1499V47H32V0C33.4624 0 34.9624 0.149902 36.4248 0.450195C44.5249 2.1377 50.8999 8.8999 52.3252 17.1128C53.6001 24.6128 50.8999 31.9624 45.0122 36.7251Z" fill="#FCAE4A"/> <path id="Path_7" d="M18.875 45.125H45.125V48.875H18.875V45.125Z" fill="#676E74"/> <path id="Path_8" d="M39.9551 10.1426L42.6064 12.7939L38.6279 16.7725L35.9766 14.1211L39.9551 10.1426Z" fill="#FF9100"/> <path id="Path_9" d="M25.3716 24.7266L28.0229 27.3779L24.0439 31.3569L21.3926 28.7056L25.3716 24.7266Z" fill="#FCAE4A"/> <path id="Path_10" d="M30.125 28.25H33.875V33.875H30.125V28.25Z" fill="#FCAE4A"/> <path id="Path_11" d="M38.6279 24.7266L42.6064 28.7056L39.9551 31.3569L35.9766 27.3779L38.6279 24.7266Z" fill="#FF9100"/> <path id="Path_12" d="M39.5 18.875H45.125V22.625H39.5V18.875Z" fill="#FF9100"/> <path id="Path_13" d="M24.0439 10.1426L28.0229 14.1216L25.3716 16.7725L21.3926 12.7939L24.0439 10.1426Z" fill="#FCAE4A"/> <path id="Path_14" d="M18.875 18.875H24.5V22.625H18.875V18.875Z" fill="#FCAE4A"/> <path id="Path_15" d="M30.125 7.625H33.875V13.25H30.125V7.625Z" fill="#FCAE4A"/> <g id="Group"> <path id="Path_16" d="M0 18.875H7.625V22.625H0V18.875Z" fill="#FFDA2D"/> <path id="Path_17" d="M6.58496 14.8101L0.834961 11.0601L2.91504 7.93994L8.66504 11.6899L6.58496 14.8101Z" fill="#FFDA2D"/> <path id="Path_18" d="M2.91504 33.5601L0.834961 30.4399L6.58496 26.6899L8.66504 29.8101L2.91504 33.5601Z" fill="#FFDA2D"/> </g> <path id="Path_19" d="M56.375 18.875H64V22.625H56.375V18.875Z" fill="#FCAE4A"/> <path id="Path_20" d="M61.085 33.5601L55.335 29.8101L57.415 26.6899L63.165 30.4399L61.085 33.5601Z" fill="#FCAE4A"/> <path id="Path_21" d="M57.415 14.8101L55.335 11.6899L61.085 7.93994L63.165 11.0601L57.415 14.8101Z" fill="#FCAE4A"/> <path id="Path_22" d="M32 7.625H33.875V13.25H32V7.625Z" fill="#FF9100"/> <path id="Path_23" d="M32 28.25H33.875V33.875H32V28.25Z" fill="#FF9100"/> <path id="Path_24" d="M32 45.125H45.125V48.875H32V45.125Z" fill="#333637"/> <path id="Path_25" d="M32 11.375C26.8252 11.375 22.625 15.5752 22.625 20.75C22.625 25.9248 26.8252 30.125 32 30.125C37.1748 30.125 41.375 25.9248 41.375 20.75C41.375 15.5752 37.1748 11.375 32 11.375Z" fill="#FCAE4A"/> <path id="Path_26" d="M32 30.125V11.375C37.1748 11.375 41.375 15.5752 41.375 20.75C41.375 25.9248 37.1748 30.125 32 30.125Z" fill="#FF9100"/> <path id="Path_27" d="M30.125 18.875H33.875V22.625H30.125V18.875Z" fill="#FFDA2D"/> <path id="Path_28" d="M32 18.875H33.875V22.625H32V18.875Z" fill="#FCAE4A"/> </g> </svg>';
+  $svg-encoded: fn.encode-svg($svg-raw);
+  $url-svg: url($svg-encoded);
+
+  @include base-icon-image-style($size: $sizeIcon);
+
+  //-webkit-mask-image: $url-svg;
+  //mask-image: $url-svg;
+  background-image: $url-svg;
+}
+
+@mixin icon-card-search($sizeIcon: fn.px-to-rem(64)) {
+  $svg-raw: 'data:image/svg+xml,<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"> <g id="icon-search"> <path id="Path" d="M56.8423 7.15821C47.3164 -2.40478 31.9404 -2.36718 22.4146 7.15821C14.3892 15.1841 12.9639 27.5972 18.8892 37.1607L16.3765 39.7105L15.0205 45.855L19.2349 50.0693L24.3271 47.6611L26.8398 45.1108C36.4033 51.0366 48.8169 49.6489 56.8423 41.5859C66.4053 32.0601 66.3677 16.6841 56.8423 7.15821Z" fill="#676E74"/> <path id="Path_2" d="M24.3271 47.6611L26.8398 45.1108C36.4033 51.0366 48.8164 49.6489 56.8423 41.5859C66.4053 32.0601 66.3677 16.6841 56.8423 7.1582L16.583 47.4175L19.2344 50.0693L24.3271 47.6611Z" fill="#474F54"/> <path id="Path_3" d="M54.2124 9.78711C50.48 6.0542 45.3232 3.74561 39.6274 3.74561C28.2358 3.74561 19.001 12.9805 19.001 24.3721C19.001 30.0679 21.3096 35.2246 25.042 38.9575C28.7749 42.6899 33.9316 44.9985 39.6274 44.9985C51.019 44.9985 60.2539 35.7637 60.2539 24.3721C60.2539 18.6763 57.9453 13.5195 54.2124 9.78711Z" fill="#64E1DC"/> <path id="Path_4" d="M60.2539 24.3721C60.2539 18.6763 57.9453 13.5195 54.2124 9.78711L25.042 38.9575C28.7749 42.6899 33.9316 44.9985 39.6274 44.9985C51.019 44.9985 60.2539 35.7637 60.2539 24.3721Z" fill="#00C8C8"/> <path id="Path_5" d="M56.2393 23.4106C56.0552 23.103 53.2593 18.4961 48.9585 15.042C46.3281 12.9287 43.1362 11.2461 39.6284 11.2461C30.3862 11.2461 23.3145 22.9146 23.0176 23.4106L22.4424 24.3721L23.0176 25.3335C23.2017 25.6416 25.9971 30.2485 30.2979 33.7026C32.9287 35.8154 36.1206 37.498 39.6284 37.498C48.8706 37.498 55.9424 25.8296 56.2393 25.3335L56.814 24.3721L56.2393 23.4106Z" fill="#EFEFF4"/> <path id="Path_6" d="M56.2393 25.3335L56.814 24.3721L56.2393 23.4106C56.0552 23.103 53.2593 18.4961 48.9585 15.042L30.2979 33.7026C32.9287 35.8154 36.1206 37.498 39.6284 37.498C48.8706 37.498 55.9424 25.8296 56.2393 25.3335Z" fill="#DADAE5"/> <path id="Path_7" d="M43.6045 20.3965C42.5859 19.3774 41.1792 18.7466 39.6284 18.7466C36.5264 18.7466 34.0029 21.27 34.0029 24.3721C34.0029 25.9233 34.6338 27.3296 35.6523 28.3481C36.6714 29.3667 38.0771 29.9976 39.6284 29.9976C42.7305 29.9976 45.2539 27.4741 45.2539 24.3721C45.2539 22.8213 44.623 21.415 43.6045 20.3965Z" fill="#64E1DC"/> <path id="Path_8" d="M45.2529 24.3721C45.2529 22.8213 44.6221 21.415 43.6035 20.3965L35.6514 28.3481C36.6699 29.3667 38.0762 29.9976 39.6274 29.9976C42.7295 29.9976 45.2529 27.4741 45.2529 24.3721Z" fill="#00C8C8"/> <path id="Path_9" d="M40.9536 23.0464C40.6143 22.707 40.1455 22.4971 39.6279 22.4971C38.5933 22.4971 37.7529 23.3374 37.7529 24.3721C37.7529 24.8896 37.9629 25.3584 38.3022 25.6978C38.6416 26.0371 39.1104 26.2471 39.6279 26.2471C40.6626 26.2471 41.5029 25.4067 41.5029 24.3721C41.5029 23.855 41.293 23.3862 40.9536 23.0464Z" fill="#676E74"/> <path id="Path_10" d="M41.5024 24.3721C41.5024 23.855 41.2925 23.3862 40.9531 23.0464L38.3018 25.6978C38.6411 26.0371 39.1099 26.2471 39.6274 26.2471C40.6621 26.2471 41.5024 25.4067 41.5024 24.3721Z" fill="#474F54"/> <path id="Path_11" d="M20.333 43.667L16.376 39.7104L0 56.0493L3.9751 60.0249L7.95068 64L24.3267 47.6611L20.333 43.667Z" fill="#575C60"/> <path id="Path_12" d="M24.3271 47.6611L20.3335 43.667L3.97559 60.0249L7.95117 64L24.3271 47.6611Z" fill="#333637"/> </g> </svg>';
+  $svg-encoded: fn.encode-svg($svg-raw);
+  $url-svg: url($svg-encoded);
+
+  @include base-icon-image-style($size: $sizeIcon);
+
+  //-webkit-mask-image: $url-svg;
+  //mask-image: $url-svg;
+  background-image: $url-svg;
+}
+
+@mixin icon-card-software($sizeIcon: fn.px-to-rem(64)) {
+  $svg-raw: 'data:image/svg+xml,<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"> <g id="icon-software"> <path id="Path" d="M64 0V41.25L60.25 45.125H3.75L0 41.25V0H64Z" fill="#474F54"/> <path id="Path_2" d="M64 0V41.25L60.25 45.125H32V0H64Z" fill="#32393F"/> <path id="Path_3" d="M22.625 50.875H41.375V62.125H22.625V50.875Z" fill="#DADAE5"/> <path id="Path_4" d="M32 50.875H41.375V62.125H32V50.875Z" fill="#C9C9D3"/> <path id="Path_5" d="M0 41.25H64V52.75H0V41.25Z" fill="#EFEFF4"/> <path id="Path_6" d="M32 41.25H64V52.75H32V41.25Z" fill="#DADAE5"/> <path id="Path_7" d="M15.125 60.25H48.875V64H15.125V60.25Z" fill="#EFEFF4"/> <path id="Path_8" d="M32 60.25H48.875V64H32V60.25Z" fill="#DADAE5"/> <path id="Shape" fill-rule="evenodd" clip-rule="evenodd" d="M7.625 20.625C7.625 13.3887 13.5137 7.5 20.75 7.5C27.9863 7.5 33.875 13.3887 33.875 20.625C33.875 27.8613 27.9863 33.75 20.75 33.75C13.5137 33.75 7.625 27.8613 7.625 20.625ZM15.125 20.625C15.125 23.7266 17.6484 26.25 20.75 26.25C23.8516 26.25 26.375 23.7266 26.375 20.625C26.375 17.5234 23.8516 15 20.75 15C17.6484 15 15.125 17.5234 15.125 20.625Z" fill="#549EF2"/> <g id="Group"> <path id="Path_9" d="M45.125 7.5H56.5V11.25H45.125V7.5Z" fill="#549EF2"/> <path id="Path_10" d="M37.625 7.5H41.375V11.25H37.625V7.5Z" fill="#549EF2"/> <path id="Path_11" d="M45.125 22.5H56.5V26.25H45.125V22.5Z" fill="#549EF2"/> <path id="Path_12" d="M37.625 22.5H41.375V26.25H37.625V22.5Z" fill="#549EF2"/> <path id="Path_13" d="M37.625 15H56.5V18.75H37.625V15Z" fill="#549EF2"/> <path id="Path_14" d="M37.625 30H56.5V33.75H37.625V30Z" fill="#549EF2"/> </g> </g> </svg>';
+  $svg-encoded: fn.encode-svg($svg-raw);
+  $url-svg: url($svg-encoded);
+
+  @include base-icon-image-style($size: $sizeIcon);
+
+  //-webkit-mask-image: $url-svg;
+  //mask-image: $url-svg;
+  background-image: $url-svg;
+}

@@ -1,0 +1,32 @@
+@use '../base';
+
+.cards {
+  padding-block: base.fluid-clamp(30, 37, base.$mobile-m, base.$tablet-s);
+  margin-inline: auto;
+
+  &__grid {
+    display: grid;
+    grid-template-areas:
+        "c"
+        "r"
+        "o"
+        "b";
+    gap: base.px-to-rem(32);
+    justify-content: center;
+
+    @media (min-width: base.px-to-em(base.$tablet-s)) {
+      grid-template-areas:
+        "r r"
+        "c o"
+        "b b";
+    }
+
+    @media (min-width: base.px-to-em(base.$wide)) {
+      grid-template-areas:
+        "c r b"
+        "c o b";
+      align-items: center;
+    }
+  }
+}
+
