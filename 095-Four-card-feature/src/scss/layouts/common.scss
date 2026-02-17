@@ -27,7 +27,7 @@ body {
   padding-block-start: base.px-to-rem(26);
 
   @media (min-width: base.px-to-em(base.$tablet-s)) {
-    padding-block-start: base.px-to-rem(50);
+    padding-block-start: base.px-to-rem(43);
   }
 
   @media (min-width: base.px-to-em(base.$tablet-m)) {
@@ -35,6 +35,8 @@ body {
   }
 }
 
+/*
 .main {
 
 }
+*/

@@ -9,7 +9,7 @@ $root-font-size: 16;
   @if math.unit($px) == "px" {
     $px: math.div($px, 1px); // Strip px units completely
   }
-  
+
   @return math.div($px, $root-font-size) * 1em;
 }
 
@@ -49,16 +49,49 @@ $root-font-size: 16;
   );
 }
 
-@function encode-svg($svg-string) {
-  $encoded: "";
-  $slice: $svg-string;
-  $index: string.index($slice, "#");
+/// Helper function for replacing ALL occurrences of a substring (works fast even with huge SVGs)
+@function str-replace($string, $search, $replace) {
+  $index: string.index($string, $search);
 
-  @while $index {
-    $encoded: $encoded + string.slice($slice, 1, $index - 1) + "%23";
-    $slice: string.slice($slice, $index + 1);
-    $index: string.index($slice, "#");
+  @if not $index {
+    @return $string;
   }
 
-  @return $encoded + $slice;
+  $result: "";
+  $remaining: $string;
+
+  @while $index {
+    // Cut off piece up to found character and add replacement
+    $result: $result + string.slice($remaining, 1, $index - 1) + $replace;
+    // Cut off the processed part from the remainder
+    $remaining: string.slice($remaining, $index + string.length($search));
+    // Look for the next occurrence in the remainder
+    $index: string.index($remaining, $search);
+  }
+
+  @return $result + $remaining;
+}
+
+/// Encoding string SVG
+@function encode-svg($string) {
+  // Replacement map. !!! ORDER IS IMPORTANT
+  // First, replace "%" character, otherwise it will encode percent signs in other codes (for ex. %23 will become %2523)
+  $encoding-map: (
+    "%": "%25",
+    "<": "%3C",
+    ">": "%3E",
+    " ": "%20",
+    "#": "%23",
+    "{": "%7B",
+    "}": "%7D",
+    '"': "'"
+  );
+
+  $encoded: $string;
+
+  @each $search, $replace in $encoding-map {
+    $encoded: str-replace($encoded, $search, $replace);
+  }
+
+  @return $encoded;
 }

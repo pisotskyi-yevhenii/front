@@ -28,7 +28,7 @@
   &:before {
     content: "";
     display: block;
-    height: 4px;
+    height: base.px-to-rem(4);
     background-color: var(--095-color-grey-400);
     position: absolute;
     top: 0;
