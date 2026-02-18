@@ -2,7 +2,6 @@
 
 .cards {
   padding-block: base.fluid-clamp(30, 37, base.$mobile-m, base.$tablet-s);
-  margin-inline: auto;
 
   &__grid {
     display: grid;

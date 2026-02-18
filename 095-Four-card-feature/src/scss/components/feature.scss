@@ -14,10 +14,14 @@
   text-align: left;
   overflow: auto;
 
+  //layout
+  display: grid;
+  grid-template-rows: repeat(2, max-content); // set maximum height of content for 1st, 2nd rows, 3d row - auto by default
+  gap: base.px-to-rem(6);
+
   > [class^='icon-'] {
-    position: absolute;
-    inset-inline-end: $padding-block;
-    inset-block-end: ($padding-block + base.px-to-rem(15));
+    place-self: end;
+    margin-block-end: base.px-to-rem(15); // just set icon according to design
   }
 
   @media (min-width: base.px-to-em(base.$tablet-m)) {
@@ -73,7 +77,6 @@
     line-height: 1.35;
     @include base.font-weight-style-letterSpacing(600, normal, 0);
     color: var(--095-color-grey-500);
-    margin-block-end: base.px-to-rem(6);
   }
 
   &__description {

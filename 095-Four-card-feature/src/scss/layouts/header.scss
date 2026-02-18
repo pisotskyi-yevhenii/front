@@ -2,20 +2,23 @@
 
 .header {
   padding-block: base.fluid-clamp(30, 37, base.$mobile-m, base.$tablet-s);
-  inline-size: 100%;
-  max-inline-size: base.px-to-rem(316);
-  margin-inline: auto;
-  text-align: center;
-  color: var(--095-color-grey-500);
 
-  // layout
-  display: flex;
-  flex-direction: column;
-  gap: base.px-to-rem(16);
+  &__content {
+    inline-size: 100%;
+    max-inline-size: base.px-to-rem(316);
+    margin-inline: auto;
+    text-align: center;
+    color: var(--095-color-grey-500);
 
-  @media (min-width: base.px-to-em(base.$mobile-m)) {
-    inline-size: base.fluid-clamp(316, 540, base.$mobile-m, base.$tablet-s);
-    max-inline-size: unset;
+    // layout
+    display: flex;
+    flex-direction: column;
+    gap: base.px-to-rem(16);
+
+    @media (min-width: base.px-to-em(base.$mobile-m)) {
+      inline-size: base.fluid-clamp(316, 540, base.$mobile-m, base.$tablet-s);
+      max-inline-size: unset;
+    }
   }
 
   &__title {

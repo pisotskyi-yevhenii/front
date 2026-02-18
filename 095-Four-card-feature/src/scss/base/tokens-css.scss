@@ -9,11 +9,15 @@
 @use 'breakpoints' as bp;
 
 :root {
-  // It is just for info in browser dev console. Automatically export breakpoints to CSS.
+  // Breakpoints as CSS variables. Just for info in browser dev tools.
   @each $name, $value in bp.$breakpoints {
     --095-#{$name}-px: #{$value};
     --095-#{$name}-em: #{fn.px-to-em($value)};
   }
+
+  // Container
+  --095-container-width: #{fn.px-to-rem(1114)}; // max-width of frame in Figma on desktop \ tablet
+  --095-container-inline-space: #{fn.px-to-rem(29.5)}; // min-padding around frames in Figma on mobile (320/375)
 
   // Colors
   --095-color-white-100: hsl(0, 0%, 100%, 1);

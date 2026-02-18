@@ -1,0 +1,7 @@
+// set as inner wrapper of section (wrapper all content of section)
+.container {
+  padding-inline: var(--095-container-inline-space); // prevent sticky content of section to browser sides
+  inline-size: 100%;
+  margin: 0 auto;
+  max-inline-size: calc(var(--095-container-width) + var(--095-container-inline-space) * 2);
+}
