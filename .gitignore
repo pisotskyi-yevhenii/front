@@ -8,3 +8,11 @@ task/
 *.sketch
 *.fig
 *.xd
+
+### AI files
+### Disable indexing (coding/developing context)
+.codeiumignore
+### Disable Search By Content
+.rgignore
+### Disable Search By File Names
+.fdignore

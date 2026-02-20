@@ -1,0 +1,31 @@
+@use '../base';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; // explicitly predict if other stylesheets modified root font size earlier in cascade
+
+  /*@media screen and (min-width: base.px-to-em(1400)) {
+    //overflow-y: scroll; // ! only for development. Set vertical scroll on desktop. For mobile it is unnecessary
+  }*/
+}
+
+body {
+  // never use (width, margin, padding, grid, flex, ect.) properties on body. Move them in wrapper.
+  scroll-behavior: smooth;
+}
+
+[id='wrapper'] {
+  // try keep id selector in less specificity. instead #wrapper use [id='wrapper']
+  min-height: 100dvh;
+}
+
+/*
+.main {
+
+}
+*/
