@@ -21,6 +21,7 @@
     }
 
     @media (min-width: base.px-to-em(base.$wide)) {
+      grid-template-rows: 1fr 1fr;
       grid-template-areas:
         "c r b"
         "c o b";
