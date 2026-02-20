@@ -42,18 +42,34 @@
 
   &--cyan {
     grid-area: c;
+
+    @media (min-width: base.px-to-em(base.$wide)) {
+      block-size: auto;
+    }
   }
 
   &--red {
     grid-area: r;
+
+    @media (min-width: base.px-to-em(base.$wide)) {
+      align-self: stretch;
+    }
   }
 
   &--orange {
     grid-area: o;
+
+    @media (min-width: base.px-to-em(base.$wide)) {
+      align-self: stretch;
+    }
   }
 
   &--blue {
     grid-area: b;
+
+    @media (min-width: base.px-to-em(base.$wide)) {
+      block-size: auto;
+    }
   }
 
   &--cyan:before {
