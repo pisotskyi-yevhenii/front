@@ -9,10 +9,5 @@ task/
 *.fig
 *.xd
 
-### AI files
-### Disable indexing (coding/developing context)
+# AI assistant "Windsurf" (Codeium - older name).
 .codeiumignore
-### Disable Search By Content
-.rgignore
-### Disable Search By File Names
-.fdignore
