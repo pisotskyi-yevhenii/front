@@ -1,0 +1,13 @@
+node_modules/
+task/
+
+.DS_Store
+.prettierignore
+
+# design files
+*.sketch
+*.fig
+*.xd
+
+# AI assistant "Windsurf" (Codeium - older name).
+.codeiumignore
