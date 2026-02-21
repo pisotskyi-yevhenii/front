@@ -13,6 +13,8 @@
   box-shadow: var(--095-box-shadow);
   text-align: left;
   overflow: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   //layout
   display: grid;
@@ -100,5 +102,10 @@
     line-height: 1.6;
     @include base.font-weight-style-letterSpacing(400, normal, base.px-to-rem(0.09));
     color: var(--095-color-grey-400);
+  }
+
+  &:hover {
+    transform: translateY(base.px-to-rem(-8));
+    box-shadow: base.px-to-rem(0) base.px-to-rem(15) base.px-to-rem(30) base.px-to-rem(-11) 0.2;
   }
 }
