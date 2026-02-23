@@ -1,0 +1,87 @@
+@use 'mixins';
+
+/*
+woff2 - supported all browser.
+https://fonts.google.com/ (to get correct woff2 see link to GitHub on tab "About" of chosen font)
+
+In browser console (Elements->Computed->Rendered Fonts) variable font uses the same name for any font-weight value
+
+Path: '../fonts/' is correct, - all scss imported in main.scss
+*/
+
+/*@font-face {
+  font-family: 'Fraunces';
+  src: url('../fonts/Fraunces/Fraunces[SOFT,WONK,opsz,wght].woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}*/
+
+$font-name: 'Poppins';
+// Normal
+@include mixins.font-face($font-name, '#{$font-name}-Thin', 100, normal);
+@include mixins.font-face($font-name, '#{$font-name}-ExtraLight', 200, normal);
+@include mixins.font-face($font-name, '#{$font-name}-Light', 300, normal);
+@include mixins.font-face($font-name, '#{$font-name}-Regular', 400, normal);
+@include mixins.font-face($font-name, '#{$font-name}-Medium', 500, normal);
+@include mixins.font-face($font-name, '#{$font-name}-SemiBold', 600, normal);
+@include mixins.font-face($font-name, '#{$font-name}-Bold', 700, normal);
+@include mixins.font-face($font-name, '#{$font-name}-ExtraBold', 800, normal);
+@include mixins.font-face($font-name, '#{$font-name}-Black', 900, normal);
+// Italic
+@include mixins.font-face($font-name, '#{$font-name}-ThinItalic', 100, italic);
+@include mixins.font-face($font-name, '#{$font-name}-ExtraLightItalic', 200, italic);
+@include mixins.font-face($font-name, '#{$font-name}-LightItalic', 300, italic);
+@include mixins.font-face($font-name, '#{$font-name}-Italic', 400, italic);
+@include mixins.font-face($font-name, '#{$font-name}-MediumItalic', 500, italic);
+@include mixins.font-face($font-name, '#{$font-name}-SemiBoldItalic', 600, italic);
+@include mixins.font-face($font-name, '#{$font-name}-BoldItalic', 700, italic);
+@include mixins.font-face($font-name, '#{$font-name}-ExtraBoldItalic', 800, italic);
+@include mixins.font-face($font-name, '#{$font-name}-BlackItalic', 900, italic);
+
+/*
+
+HTML and CSS for test include fonts
+<div class="test">
+  <div class="t-100">lorem</div>
+  <div class="t-200">lorem</div>
+  <div class="t-300">lorem</div>
+  <div class="t-400">lorem</div>
+  <div class="t-500">lorem</div>
+  <div class="t-600">lorem</div>
+  <div class="t-700">lorem</div>
+  <div class="t-800">lorem</div>
+  <div class="t-900">lorem</div>
+  <div class="t-100 i">lorem</div>
+  <div class="t-200 i">lorem</div>
+  <div class="t-300 i">lorem</div>
+  <div class="t-400 i">lorem</div>
+  <div class="t-500 i">lorem</div>
+  <div class="t-600 i">lorem</div>
+  <div class="t-700 i">lorem</div>
+  <div class="t-800 i">lorem</div>
+  <div class="t-900 i">lorem</div>
+</div>
+
+.test {display: flex;flex-direction: column;align-items: start;}
+.t-100 {font-weight: 100;}
+.t-200 {font-weight: 200;}
+.t-300 {font-weight: 300;}
+.t-400 {font-weight: 400;}
+.t-500 {font-weight: 500;}
+.t-600 {font-weight: 600;}
+.t-700 {font-weight: 700;}
+.t-800 {font-weight: 800;}
+.t-900 {font-weight: 900;}
+
+.t-100.i {font-weight: 100;  font-style: italic;}
+.t-200.i {font-weight: 200;  font-style: italic;}
+.t-300.i {font-weight: 300;  font-style: italic;}
+.t-400.i {font-weight: 400;  font-style: italic;}
+.t-500.i {font-weight: 500;  font-style: italic;}
+.t-600.i {font-weight: 600;  font-style: italic;}
+.t-700.i {font-weight: 700;  font-style: italic;}
+.t-800.i {font-weight: 800;  font-style: italic;}
+.t-900.i {font-weight: 900;  font-style: italic;}
+
+*/

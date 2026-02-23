@@ -1,0 +1,9 @@
+@use 'base/fonts';
+@use 'base/tokens-css';
+@use 'base/container';
+
+// Order is important (from global to components).
+// To include whole folder, inside folder must be index.scss which include inner files
+@use 'layouts';
+@use 'sections';
+@use 'components';

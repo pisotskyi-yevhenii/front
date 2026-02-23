@@ -1,0 +1,12 @@
+@use 'functions' as fn;
+
+// set as inner wrapper of section (wrapper all content of section)
+.container {
+  $container-width: fn.px-to-rem(1114); // max-width of frame in Figma on desktop \ tablet
+  $container-inline-space: fn.px-to-rem(29.5); // min-padding around frames in Figma on mobile (320/375)
+
+  padding-inline: $container-inline-space; // prevent sticky content of section to browser sides
+  inline-size: 100%;
+  margin: 0 auto;
+  max-inline-size: $container-inline-space * 2 + $container-width;
+}

@@ -1,0 +1,49 @@
+// =============================================
+// Variables allow to centralize design,
+// making it easier to maintain
+// update without recompiling Sass
+// change value for variable instead of n files
+// =============================================
+
+@use 'functions' as fn;
+@use 'breakpoints' as bp;
+
+:root {
+  // Breakpoints as CSS variables. Just for info in browser dev tools.
+  @each $name, $value in bp.$breakpoints {
+    --094-#{$name}-px: #{$value};
+    --094-#{$name}-em: #{fn.px-to-em($value)};
+  }
+
+  // Colors
+  --094-color-white-100: hsl(0, 0%, 100%, 1);
+  --094-color-white-300: hsl(0, 0%, 98%, 1);
+  --094-color-grey-400: hsl(210, 6%, 44%, 1);
+  --094-color-grey-500: hsl(234, 12%, 34%, 1);
+  --094-color-cyan: hsl(180, 62%, 55%, 1);
+  --094-color-red: hsl(0, 78%, 62%, 1);
+  --094-color-orange: hsl(34, 97%, 64%, 1);
+  --094-color-blue: hsl(212, 86%, 64%, 1);
+  --094-color-shadow: hsl(213, 47%, 67%, 0.5);
+
+  // Font sizes
+  --094-font-family-primary: 'Poppins', system-ui, sans-serif;
+  //--094-font-family-accent: 'Fraunces', system-ui, sans-serif;
+
+  //--094-font-size-3xs: #{fn.px-to-rem(12)};
+  --094-font-size-2xs: #{fn.px-to-rem(13)};
+  //--094-font-size-xs: #{fn.px-to-rem(14)};
+  --094-font-size-s: #{fn.px-to-rem(15)};
+  //--094-font-size-base:
+  --094-font-size-m: #{fn.px-to-rem(20)};
+  --094-font-size-l: #{fn.px-to-rem(24)};
+  --094-font-size-xl: #{fn.px-to-rem(36)};
+  //--094-font-size-2xl:
+  //--094-font-size-3xl:
+
+  // Border-radius
+  //--094-border-radius-3xs: #{fn.px-to-rem(4)};
+  --094-border-radius-2xs: #{fn.px-to-rem(8)};
+
+  --094-box-shadow: #{fn.px-to-rem(0)} #{fn.px-to-rem(15)} #{fn.px-to-rem(30)} #{fn.px-to-rem(-11)} var(--094-color-shadow);
+}
