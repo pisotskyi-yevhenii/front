@@ -1,0 +1,89 @@
+@use '../functions' as fn;
+
+.project {
+  $space: 8px;
+
+  &__header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: fn.px-to-rem($space);
+
+    text-decoration: none;
+    border-radius: fn.px-to-rem(4.8px);
+    color: inherit;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--0-color-hover);
+      }
+
+      &:focus-visible {
+        background-color: var(--0-base-bgcolor);
+        color: var(--0-color-hover);
+      }
+    }
+  }
+
+  &__title {
+    font-size: fn.px-to-rem(16px);
+    align-self: center;
+    flex: 1 1 0;
+    padding-block: fn.px-to-rem(1.6px);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--0-base-bgcolor);
+      }
+    }
+  }
+
+  &__button {
+    padding: fn.px-to-rem(1.6px) fn.px-to-rem($space);
+    text-align: center;
+    background-color: var(--0-base-bgcolor);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--0-bgc-hover);
+      }
+    }
+  }
+
+  &__title,
+  &__button {
+    border-radius: inherit;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:active {
+        background-color: var(--0-bgc-active);
+      }
+    }
+  }
+
+  @media screen and (min-width: fn.px-to-em(1024px)) {
+    &__title {
+      font-size: fn.px-to-rem(19.2px);
+      padding: fn.px-to-rem(1px) fn.px-to-rem($space);
+    }
+
+    &__button {
+      padding: fn.px-to-rem(3.2px) fn.px-to-rem(16px);
+    }
+  }
+  
+  &__design {
+    --size-vw: 4.8vw;
+    display: grid;
+    grid-template-columns: repeat(20, var(--size-vw));
+    grid-auto-rows: var(--size-vw);
+    justify-content: center;
+    padding-block: fn.px-to-rem(8px);
+    border-block-end: 1px solid hsl(0, 0%, 80%, 1);
+
+    @media (min-width: fn.px-to-em(1024)) {
+      --size-vw: #{fn.px-to-rem(50)};
+    }
+  }
+}

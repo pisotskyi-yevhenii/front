@@ -1,34 +1,99 @@
 @use "sass:math";
+@use "sass:string";
 
-/* Vars*/
-$root-font-size: 16px;
+/* Vars */
+$root-font-size: 16;
 
-/* Functions */
+/*=====================================================================================================================
+Main Functions
+=====================================================================================================================*/
 @function px-to-em($px) {
+  $px: strip-px($px);
   @return math.div($px, $root-font-size) * 1em;
 }
 
 @function px-to-rem($px) {
+  $px: strip-px($px);
   @return math.div($px, $root-font-size) * 1rem;
 }
 
-@function fluid-clamp($min-px, $max-px, $min-vw: 375px, $max-vw: 1440px) {
-  $min: px-to-rem($min-px);
-  $max: px-to-rem($max-px);
-
+@function fluid-clamp($min_px, $max_px, $min_bp_px: 375, $max_bp_px: 1440) {
   // Strip px units completely
-  $min-value: math.div($min-px, 1px);
-  $max-value: math.div($max-px, 1px);
+  $min_px: strip-px($min_px);
+  $max_px: strip-px($max_px);
+  $min_bp_px: strip-px($min_bp_px);
+  $max_bp_px: strip-px($max_bp_px);
 
-  $min-vw: math.div($min-vw, 1px);
-  $max-vw: math.div($max-vw, 1px);
-
-  $slope-unitless: math.div($max-value - $min-value, $max-vw - $min-vw);
-  $intercept-value: math.div($min-value - $slope-unitless * $min-vw, math.div($root-font-size, 1px));
+  $slope-unitless: math.div(($max_px - $min_px), ($max_bp_px - $min_bp_px));
+  $intercept-value: math.div(($min_px - $slope-unitless * $min_bp_px), $root-font-size);
 
   @return clamp(
-    #{$min},
+    px-to-rem($min_px),
     #{$intercept-value}rem + #{$slope-unitless * 100}vw,
-    #{$max}
+    px-to-rem($max_px)
   );
+}
+
+/// Encoding string SVG
+@function encode-svg($string) {
+  // Replacement map. !!! ORDER IS IMPORTANT
+  // First, replace "%" character, otherwise it will encode percent signs in other codes (for ex. %23 will become %2523)
+  $encoding-map: (
+    "%": "%25",
+    "<": "%3C",
+    ">": "%3E",
+    " ": "%20",
+    "#": "%23",
+    "{": "%7B",
+    "}": "%7D",
+    '"': "'"
+  );
+
+  $encoded: $string;
+
+  @each $search, $replace in $encoding-map {
+    $encoded: str-replace($encoded, $search, $replace);
+  }
+
+  @return $encoded;
+}
+
+/*=====================================================================================================================
+Helper Functions
+=====================================================================================================================*/
+
+/// Helper: Clears the value from 'px' or throws an error if unit is not 'px'
+/// @param {Number} $value Value to check
+@function strip-px($value) {
+  @if not math.is-unitless($value) {
+    @if math.unit($value) != "px" {
+      @error "in /base/functions.scss. Passed value must be with px unit or without any units";
+    }
+    @return math.div($value, 1px);
+  }
+
+  @return $value;
+}
+
+/// Helper: Replacing ALL occurrences of a substring (works fast even with huge SVGs)
+@function str-replace($string, $search, $replace) {
+  $index: string.index($string, $search);
+
+  @if not $index {
+    @return $string;
+  }
+
+  $result: "";
+  $remaining: $string;
+
+  @while $index {
+    // Cut off piece up to found character and add replacement
+    $result: $result + string.slice($remaining, 1, $index - 1) + $replace;
+    // Cut off the processed part from the remainder
+    $remaining: string.slice($remaining, $index + string.length($search));
+    // Look for the next occurrence in the remainder
+    $index: string.index($remaining, $search);
+  }
+
+  @return $result + $remaining;
 }

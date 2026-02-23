@@ -1,0 +1,68 @@
+@use '../functions' as fn;
+
+.device {
+  $border-width-2: fn.px-to-rem(2);
+  $border-width-4: fn.px-to-rem(4);
+  $border-width-5: fn.px-to-rem(5);
+  $border-width-12: fn.px-to-rem(12);
+
+  border: $border-width-2 solid var(--0-color-device-border);
+  border-bottom-width: $border-width-5;
+  border-radius: $border-width-5;
+
+  box-shadow: 0 0.25vw 0.5vw rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: fn.px-to-rem(8px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--0-color-hover);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: fn.px-to-rem(4px);
+  }
+
+  img {
+    display: block;
+    max-inline-size: 100%;
+    height: auto;
+  }
+
+  &--mobile {
+    position: relative;
+    z-index: 1;
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 5;
+  }
+
+  &--tablet {
+    position: relative;
+    z-index: 1;
+    grid-column: 14 / span 7;
+    grid-row: 3 / span 4;
+    border-bottom-width: $border-width-2;
+    border-right-width: $border-width-5;
+  }
+
+  &--desktop {
+    position: relative;
+    grid-column: 3 / span 13;
+    grid-row: 1 / span 8;
+  }
+
+  @media (min-width: fn.px-to-em(768)) {
+    border-width: $border-width-4;
+    border-bottom-width: $border-width-12;
+    border-radius: $border-width-5;
+
+    &--tablet {
+      border-bottom-width: $border-width-4;
+      border-right-width: $border-width-12;
+    }
+  }
+}

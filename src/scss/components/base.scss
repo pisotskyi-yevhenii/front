@@ -7,32 +7,33 @@
 }
 
 html {
-  font-size: 100%; // best practice for stability unexpected overriding
+  font-size: 100%; // explicitly predict if other stylesheets modified root font size earlier in cascade
 
-  /* !!! only for development.
-   To have always set vertical scroll on desktop. For mobile it is unnecessary
-   */
-  @media screen and (min-width: fn.px-to-em(1400px)) {
-    overflow-y: scroll;
-  }
+  /*@media screen and (min-width: base.px-to-em(1400)) {
+    //overflow-y: scroll; // ! only for development. Set vertical scroll on desktop. For mobile it is unnecessary
+  }*/
 }
 
 body {
-  // never use on body layout properties (width, margin, padding, ect.). Move them in wrapper.
+  // never use (width, margin, padding, ect.) properties on body. Move them in wrapper.
+  scroll-behavior: smooth;
   font-family: 'DM Sans', Arial, sans-serif;
-  color: var(--base-color);
+  color: var(--0-base-color);
 }
 
 .wrapper {
-  width: 100%;
-  max-width: fn.px-to-rem(700px);
+  $padding-inline: fn.px-to-rem(8px);
+  $max-inline-size: fn.px-to-rem(1000px);
+  
+  inline-size: 100%;
+  max-inline-size: $padding-inline * 2 + $max-inline-size;
   margin: 0 auto;
   padding-block-start: fn.px-to-rem(16px);
-  padding-inline: fn.fluid-clamp(0px, 8px); // the same as in https://clampgenerator.com/
+  padding-inline: $padding-inline;
 }
 
 .header {
-  margin-block-end: fn.fluid-clamp(16px, 32px);
+  margin-block-end: fn.fluid-clamp(16px, 32px); // the same as in https://clampgenerator.com/
 
   &__title {
     text-align: center;
