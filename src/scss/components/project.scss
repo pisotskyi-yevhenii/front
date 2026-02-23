@@ -8,6 +8,7 @@
     align-items: start;
     justify-content: space-between;
     gap: fn.px-to-rem($space);
+    margin-block-end: fn.px-to-rem(10);
 
     text-decoration: none;
     border-radius: fn.px-to-rem(4.8px);
@@ -72,15 +73,13 @@
       padding: fn.px-to-rem(3.2px) fn.px-to-rem(16px);
     }
   }
-  
+
   &__design {
     --size-vw: 4.8vw;
     display: grid;
     grid-template-columns: repeat(20, var(--size-vw));
     grid-auto-rows: var(--size-vw);
     justify-content: center;
-    padding-block: fn.px-to-rem(8px);
-    border-block-end: 1px solid hsl(0, 0%, 80%, 1);
 
     @media (min-width: fn.px-to-em(1024)) {
       --size-vw: #{fn.px-to-rem(50)};
