@@ -22,6 +22,10 @@ body {
 [id='wrapper'] {
   // try keep id selector in less specificity. instead #wrapper use [id='wrapper']
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*

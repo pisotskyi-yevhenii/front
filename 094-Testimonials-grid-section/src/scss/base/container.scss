@@ -6,7 +6,7 @@
   $container-inline-space: fn.px-to-rem(29.5); // min-padding around frames in Figma on mobile (320/375)
 
   padding-inline: $container-inline-space; // prevent sticky content of section to browser sides
+  max-inline-size: $container-inline-space * 2 + $container-width;
   inline-size: 100%;
   margin: 0 auto;
-  max-inline-size: $container-inline-space * 2 + $container-width;
 }

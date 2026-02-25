@@ -1,0 +1,5 @@
+@use '../base';
+
+.icon-card-homepage {
+  @include base.icon-card-homepage(base.px-to-rem(64));
+}
