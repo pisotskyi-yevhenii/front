@@ -1,3 +1,4 @@
+@use "sass:meta";
 @use "sass:math";
 @use "sass:string";
 
@@ -7,9 +8,13 @@ $root-font-size: 16;
 /*=====================================================================================================================
 Main Functions
 =====================================================================================================================*/
-@function px-to-em($px) {
+@function bp-in-em($px) {
   $px: strip-px($px);
   @return math.div($px, $root-font-size) * 1em;
+}
+
+@function css-calc-em($value, $base) {
+  @return calc($value / $base * 1em);
 }
 
 @function px-to-rem($px) {
@@ -96,4 +101,16 @@ Helper Functions
   }
 
   @return $result + $remaining;
+}
+
+/// Helper: Clears the value from any unit or throws an error if type not a number
+@function strip-unit($number) {
+  @if meta.type-of($number) == 'number' {
+    @if math.is-unitless($number) {
+      @return $number;
+    }
+    @return math.div($number, ($number * 0 + 1));
+  }
+
+  @error "in /base/functions.scss. Passed value must be type of number. You passed: #{meta.type-of($number)} (#{$number})";
 }

@@ -1,0 +1,15 @@
+@use '../base';
+
+.reviews {
+  padding-block: base.fluid-clamp(73, 83, base.$mobile, base.$tablet-s);
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: base.px-to-rem(32);
+
+    @media (min-width: base.bp-in-em(base.$tablet-m)) {
+      row-gap: base.fluid-clamp(24, 32, base.$desktop, base.$tablet-m);
+    }
+  }
+}

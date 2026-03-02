@@ -1,0 +1,84 @@
+@use '../base';
+
+.testimonial {
+  --t-color-bg: inherit;
+  --author-photo-outline: transparent;
+  --author-name-color: inherit;
+  --author-status-color: inherit;
+  --t-color-intro-text: inherit;
+  --t-color-main-text: inherit;
+
+  // Inner
+  --fsz-testimonial: 1rem;
+  @include base.scaled-font-size(var(--fsz-testimonial));
+  // layout
+  display: flex;
+  flex-direction: column;
+  gap: base.css-calc-em(16px, var(--fsz-testimonial));
+  padding: base.css-calc-em(32px, var(--fsz-testimonial));
+  border-radius: base.css-calc-em(var(--094-border-radius-3xs), var(--fsz-testimonial));
+  box-shadow: var(--094-box-shadow);
+  background-color: var(--t-color-bg);
+
+  &__intro-text {
+    --fsz-t-intro-text: var(--094-font-size-m);
+    @include base.scaled-font-size(var(--fsz-t-intro-text));
+    line-height: 1.2em;
+    @include base.font-weight-style-letterSpacing(600, normal, base.css-calc-em(0.13px, var(--fsz-t-intro-text)));
+    color: var(--t-color-intro-text);
+  }
+
+  &__main-text {
+    --fsz-t-main-text: var(--094-font-size-xs);
+    @include base.scaled-font-size(var(--fsz-t-main-text));
+    line-height: 1.39em;
+    @include base.font-weight-style-letterSpacing(500, normal, base.css-calc-em(0.1px, var(--fsz-t-main-text)));
+    color: var(--t-color-main-text);
+
+    quotes: '“' '”';
+
+    & > :first-child::before {
+      content: open-quote;
+    }
+
+    & > :last-child::after {
+      content: close-quote;
+    }
+  }
+
+  // Modifiers
+  &--purple {
+    --t-color-bg: var(--094-color-purple-500);
+    --author-photo-outline: var(--094-color-purple-300);
+    --author-name-color: var(--094-color-white-100);
+    --author-status-color: var(--094-color-purple-50);
+    --t-color-intro-text: var(--094-color-white-100);
+    --t-color-main-text: var(--094-color-purple-50);
+  }
+
+  &--grey {
+    --t-color-bg: var(--094-color-grey-500);
+    --author-name-color: var(--094-color-white-100);
+    --author-status-color: var(--094-color-grey-300);
+    --t-color-intro-text: var(--094-color-white-100);
+    --t-color-main-text: var(--094-color-grey-100);
+  }
+
+  &--white {
+    --t-color-bg: var(--094-color-white-100);
+    --author-photo-outline: var(--094-color-grey-300);
+    --author-name-color: var(--094-color-grey-500);
+    --author-status-color: var(--094-color-grey-400);
+    --t-color-intro-text: var(--094-color-grey-500);
+    --t-color-main-text: var(--094-color-grey-400);
+  }
+
+  &--dark-blue {
+    --t-color-bg: var(--094-color-dark-blue);
+    --author-photo-outline: var(--094-color-purple-500);
+    --author-name-color: var(--094-color-white-100);
+    --author-status-color: var(--094-color-white-100);
+    --t-color-intro-text: var(--094-color-grey-200);
+    --t-color-main-text: var(--094-color-grey-100);
+  }
+}

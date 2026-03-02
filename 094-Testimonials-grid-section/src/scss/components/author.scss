@@ -1,0 +1,50 @@
+@use '../base';
+
+.author {
+  --fsz-author: 1rem;
+  @include base.scaled-font-size(var(--fsz-author));
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: base.css-calc-em(17px, var(--fsz-author));
+
+  &__photo {
+    --author-photo-size: #{base.px-to-rem(28)};
+    max-inline-size: base.css-calc-em(var(--author-photo-size), var(--fsz-author));
+    max-block-size: base.css-calc-em(var(--author-photo-size), var(--fsz-author));
+    border-radius: 50%;
+
+    img {
+      display: block;
+      object-fit: cover;
+      inline-size: 100%;
+      block-size: 100%;
+      border-radius: inherit;
+    }
+
+    &--outline {
+      outline: base.css-calc-em(2px, var(--fsz-author)) solid var(--author-photo-outline);
+    }
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    gap: base.css-calc-em(3px, var(--fsz-author));
+    @include base.font-weight-style-letterSpacing(500, normal, base.css-calc-em(0.1px, var(--fsz-author)));
+  }
+
+  &__name {
+    --fsz-a-name: var(--094-font-size-xs);
+    @include base.scaled-font-size(var(--fsz-a-name));
+    line-height: 1.1em;
+    color: var(--author-name-color);
+  }
+
+  &__status {
+    --fsz-a-status: var(--094-font-size-3xs);
+    @include base.scaled-font-size(var(--fsz-a-status));
+    line-height: 1.1em;
+    color: var(--author-status-color);
+  }
+}

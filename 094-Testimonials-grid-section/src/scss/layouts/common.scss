@@ -9,7 +9,7 @@
 html {
   font-size: 100%; // explicitly predict if other stylesheets modified root font size earlier in cascade
 
-  /*@media screen and (min-width: base.px-to-em(1400)) {
+  /*@media screen and (min-width: base.bp-in-em(1400)) {
     //overflow-y: scroll; // ! only for development. Set vertical scroll on desktop. For mobile it is unnecessary
   }*/
 }
@@ -17,19 +17,19 @@ html {
 body {
   // never use (width, margin, padding, grid, flex, ect.) properties on body. Move them in wrapper.
   scroll-behavior: smooth;
+  font-family: var(--094-font-family-barlow-semi-condensed);
 }
 
 [id='wrapper'] {
   // try keep id selector in less specificity. instead #wrapper use [id='wrapper']
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-/*
-.main {
+  background-color: var(--094-color-white-300);
 
+  @media (min-width: base.bp-in-em(base.$desktop)) {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
-*/
