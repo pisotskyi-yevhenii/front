@@ -8,6 +8,12 @@
   --t-color-intro-text: inherit;
   --t-color-main-text: inherit;
 
+  padding: base.css-calc-em(calc(2px + 8vw), var(--fsz-testimonial));
+
+  @media (min-width: base.bp-in-em(base.$mobile)) {
+    padding: base.css-calc-em(32px, var(--fsz-testimonial));
+  }
+
   // Inner
   --fsz-testimonial: 1rem;
   @include base.scaled-font-size(var(--fsz-testimonial));
@@ -15,7 +21,6 @@
   display: flex;
   flex-direction: column;
   gap: base.css-calc-em(16px, var(--fsz-testimonial));
-  padding: base.css-calc-em(32px, var(--fsz-testimonial));
   border-radius: base.css-calc-em(var(--094-border-radius-3xs), var(--fsz-testimonial));
   box-shadow: var(--094-box-shadow);
   background-color: var(--t-color-bg);

@@ -1,12 +1,22 @@
 @use 'functions' as fn;
+@use 'breakpoints' as bp;
 
 // set as inner wrapper of section (wrapper all content of section)
 .container {
   $container-inline-space: fn.px-to-rem(35); // min-padding around frames in Figma on mobile (320/375)
-  $container-width: fn.px-to-rem(1114); // max-width of frame in Figma on desktop \ tablet
+  $container-width: fn.px-to-rem(647); // max-width of frame in Figma on desktop \ tablet
 
-  padding-inline: $container-inline-space; // prevent sticky content of section to browser sides
-  max-inline-size: $container-inline-space * 2 + $container-width;
-  inline-size: 100%;
-  margin: 0 auto;
+  padding-inline: fn.fluid-clamp(5, 35, 320, bp.$mobile);
+
+  @media (min-width: fn.bp-in-em(bp.$mobile)) {
+    padding-inline: $container-inline-space; // prevent sticky content of section to browser sides
+    max-inline-size: $container-inline-space * 2 + $container-width;
+    inline-size: 100%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: fn.bp-in-em(bp.$tablet-m)) {
+    $container-width: fn.px-to-rem(1114); // max-width of frame in Figma on desktop \ tablet
+    max-inline-size: $container-inline-space * 2 + $container-width;
+  }
 }

@@ -4,11 +4,18 @@
   --fsz-author: 1rem;
   @include base.scaled-font-size(var(--fsz-author));
   display: flex;
+  flex-wrap: wrap;
   justify-content: start;
   align-items: center;
-  gap: base.css-calc-em(17px, var(--fsz-author));
+  --gap: #{base.px-to-rem(17)};
+  gap: base.css-calc-em(var(--gap), var(--fsz-author));
+
+  @media (min-width: base.bp-in-em(base.$wide)) {
+    --gap: #{base.px-to-rem(16)};
+  }
 
   &__photo {
+    flex-grow: 1;
     --author-photo-size: #{base.px-to-rem(28)};
     max-inline-size: base.css-calc-em(var(--author-photo-size), var(--fsz-author));
     max-block-size: base.css-calc-em(var(--author-photo-size), var(--fsz-author));

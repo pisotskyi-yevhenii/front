@@ -6,10 +6,42 @@
   &__layout {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: base.px-to-rem(32);
+    gap: base.px-to-rem(32);
 
-    @media (min-width: base.bp-in-em(base.$tablet-m)) {
+    @media (min-width: base.bp-in-em(base.$tablet-s)) {
+      & :nth-child(1) {
+        grid-area: a1;
+      }
+
+      & :nth-child(2) {
+        grid-area: a2;
+      }
+
+      & :nth-child(3) {
+        grid-area: a3;
+      }
+
+      & :nth-child(4) {
+        grid-area: a4;
+      }
+
+      & :nth-child(5) {
+        grid-area: a5;
+      }
+
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-areas:
+    "a1 a1 a1 a1 a1 a1 a1 a1"
+    "a2 a2 a2 a2 a3 a3 a3 a3"
+    "a4 a4 a4 a4 a4 a4 a4 a4"
+    "a5 a5 a5 a5 a5 a5 a5 a5";
+    }
+
+    @media (min-width: base.bp-in-em(base.$tablet-m + 0.02)) {
       row-gap: base.fluid-clamp(24, 32, base.$desktop, base.$tablet-m);
+      grid-template-areas:
+    "a1 a1 a1 a1 a2 a2 a5 a5"
+    "a3 a3 a4 a4 a4 a4 a5 a5";
     }
   }
 }

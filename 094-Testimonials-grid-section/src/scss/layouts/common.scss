@@ -18,14 +18,13 @@ body {
   // never use (width, margin, padding, grid, flex, ect.) properties on body. Move them in wrapper.
   scroll-behavior: smooth;
   font-family: var(--094-font-family-barlow-semi-condensed);
+  background-color: var(--094-color-white-300);
 }
 
 [id='wrapper'] {
   // try keep id selector in less specificity. instead #wrapper use [id='wrapper']
 
-  background-color: var(--094-color-white-300);
-
-  @media (min-width: base.bp-in-em(base.$desktop)) {
+  @media (min-width: base.bp-in-em(base.$wide)) {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
