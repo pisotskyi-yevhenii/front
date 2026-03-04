@@ -1,5 +1,6 @@
 @use '../base';
 
-.icon-card-homepage {
-  @include base.icon-card-homepage(base.px-to-rem(64));
+// Example use @mixin icon as HTML element
+.icon-quotes {
+  @include base.icon-quotes(base.px-to-rem(104));
 }

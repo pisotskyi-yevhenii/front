@@ -4,9 +4,10 @@
   padding-block: base.fluid-clamp(73, 83, base.$mobile, base.$tablet-s);
 
   &__layout {
+    $gap: 32;
     display: grid;
     grid-template-columns: 1fr;
-    gap: base.px-to-rem(32);
+    gap: base.px-to-rem($gap);
 
     @media (min-width: base.bp-in-em(base.$tablet-s)) {
       & :nth-child(1) {

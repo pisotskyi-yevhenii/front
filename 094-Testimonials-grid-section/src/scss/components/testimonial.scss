@@ -8,12 +8,6 @@
   --t-color-intro-text: inherit;
   --t-color-main-text: inherit;
 
-  padding: base.css-calc-em(calc(2px + 8vw), var(--fsz-testimonial));
-
-  @media (min-width: base.bp-in-em(base.$mobile)) {
-    padding: base.css-calc-em(32px, var(--fsz-testimonial));
-  }
-
   // Inner
   --fsz-testimonial: 1rem;
   @include base.scaled-font-size(var(--fsz-testimonial));
@@ -21,9 +15,37 @@
   display: flex;
   flex-direction: column;
   gap: base.css-calc-em(16px, var(--fsz-testimonial));
+  padding: base.css-calc-em(calc(2px + 8vw), var(--fsz-testimonial));
   border-radius: base.css-calc-em(var(--094-border-radius-3xs), var(--fsz-testimonial));
   box-shadow: var(--094-box-shadow);
   background-color: var(--t-color-bg);
+  position: relative;
+  z-index: 0;
+
+  @media (min-width: base.bp-in-em(base.$mobile)) {
+    padding: base.css-calc-em(32px, var(--fsz-testimonial));
+  }
+
+  @media (min-width: base.bp-in-em(base.$tablet-s)) {
+    &:first-child::before {
+      $width: base.css-calc-em(104px, var(--fsz-testimonial));
+      $height: base.css-calc-em(102px, var(--fsz-testimonial));
+
+      @include base.icon-quotes($width);
+      height: $height;
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-end: base.px-to-rem(167);
+      color: var(--094-color-purple-300);
+      z-index: -1;
+    }
+  }
+
+  @media (min-width: base.bp-in-em(base.$tablet-m)) {
+    &:first-child::before {
+      inset-inline-end: base.px-to-rem(60);
+    }
+  }
 
   &__intro-text {
     --fsz-t-intro-text: var(--094-font-size-m);
@@ -85,5 +107,14 @@
     --author-status-color: var(--094-color-white-100);
     --t-color-intro-text: var(--094-color-grey-200);
     --t-color-main-text: var(--094-color-grey-100);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 }
