@@ -3,14 +3,14 @@
 @use "sass:string";
 
 /* Vars */
-$root-font-size: 16;
+$browser-context: 16;
 
 /*=====================================================================================================================
 Main Functions
 =====================================================================================================================*/
 @function bp-in-em($px) {
   $px: strip-px($px);
-  @return math.div($px, $root-font-size) * 1em;
+  @return math.div($px, $browser-context) * 1em;
 }
 
 @function css-calc-em($value, $base) {
@@ -19,7 +19,7 @@ Main Functions
 
 @function px-to-rem($px) {
   $px: strip-px($px);
-  @return math.div($px, $root-font-size) * 1rem;
+  @return math.div($px, $browser-context) * 1rem;
 }
 
 @function fluid-clamp($min_px, $max_px, $min_bp_px, $max_bp_px) {
@@ -30,7 +30,7 @@ Main Functions
   $max_bp_px: strip-px($max_bp_px);
 
   $slope-unitless: math.div(($max_px - $min_px), ($max_bp_px - $min_bp_px));
-  $intercept-value: math.div(($min_px - $slope-unitless * $min_bp_px), $root-font-size);
+  $intercept-value: math.div(($min_px - $slope-unitless * $min_bp_px), $browser-context);
 
   @return clamp(
     px-to-rem($min_px),
