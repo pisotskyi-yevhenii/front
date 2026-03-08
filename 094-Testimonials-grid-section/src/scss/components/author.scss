@@ -1,24 +1,22 @@
 @use '../base';
 
 .author {
-  --fsz-author: 1rem;
-  @include base.scaled-font-size(var(--fsz-author));
+  font-size: base.rem(base.$fsz-base); // need for em context in component
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
   align-items: center;
-  --gap: #{base.px-to-rem(17)};
-  gap: base.css-calc-em(var(--gap), var(--fsz-author));
+  column-gap: base.em(17px, base.$fsz-base);
 
-  @media (min-width: base.bp-in-em(base.$wide)) {
-    --gap: #{base.px-to-rem(16)};
+  @media (min-width: base.em(base.$wide)) {
+    column-gap: base.em(16px, base.$fsz-base);
   }
 
   &__photo {
+    $author-photo-size: 28px;
     flex-grow: 1;
-    --author-photo-size: #{base.px-to-rem(28)};
-    max-inline-size: base.css-calc-em(var(--author-photo-size), var(--fsz-author));
-    max-block-size: base.css-calc-em(var(--author-photo-size), var(--fsz-author));
+    max-inline-size: base.em($author-photo-size, base.$fsz-base);
+    max-block-size: base.em($author-photo-size, base.$fsz-base);
     border-radius: 50%;
 
     img {
@@ -30,28 +28,30 @@
     }
 
     &--outline {
-      outline: base.css-calc-em(2px, var(--fsz-author)) solid var(--author-photo-outline);
+      outline: base.em(base.$border-width-3xs, base.$fsz-base) solid var(--author-photo-outline);
     }
   }
 
   &__data {
     display: flex;
     flex-direction: column;
-    gap: base.css-calc-em(3px, var(--fsz-author));
-    @include base.font-weight-style-letterSpacing(500, normal, base.css-calc-em(0.1px, var(--fsz-author)));
+    gap: base.em(3px, base.$fsz-base);
+    @include base.font-weight-style-letterSpacing(500, normal, base.em(0.1px, base.$fsz-base));
   }
 
   &__name {
-    --fsz-a-name: var(--094-font-size-xs);
-    @include base.scaled-font-size(var(--fsz-a-name));
-    line-height: 1.1em;
+    font-size: base.em(base.$fsz-xs, base.$fsz-base);
+    line-height: 1.1;
     color: var(--author-name-color);
   }
 
   &__status {
-    --fsz-a-status: var(--094-font-size-3xs);
-    @include base.scaled-font-size(var(--fsz-a-status));
-    line-height: 1.1em;
+    font-size: base.em(base.$fsz-3xs, base.$fsz-base);
+    line-height: 1.1;
     color: var(--author-status-color);
+  }
+
+  &--x2 {
+    font-size: base.rem(base.$fsz-base * 2);
   }
 }

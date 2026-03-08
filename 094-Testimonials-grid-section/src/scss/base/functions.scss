@@ -8,17 +8,19 @@ $browser-context: 16;
 /*=====================================================================================================================
 Main Functions
 =====================================================================================================================*/
-@function bp-in-em($px) {
+@function em($px, $base: $browser-context) {
   $px: strip-px($px);
-  @return math.div($px, $browser-context) * 1em;
+  $base: strip-px($base);
+  @return math.div($px, $base) * 1em;
 }
 
 @function css-calc-em($value, $base) {
-  @return calc($value / $base * 1em);
+  @return calc(#{$value} / #{$base} * 1em);
 }
 
-@function px-to-rem($px) {
+@function rem($px) {
   $px: strip-px($px);
+  $browser-context: strip-px($browser-context);
   @return math.div($px, $browser-context) * 1rem;
 }
 
@@ -33,9 +35,9 @@ Main Functions
   $intercept-value: math.div(($min_px - $slope-unitless * $min_bp_px), $browser-context);
 
   @return clamp(
-    px-to-rem($min_px),
+    rem($min_px),
     #{$intercept-value}rem + #{$slope-unitless * 100}vw,
-    px-to-rem($max_px)
+    rem($max_px)
   );
 }
 

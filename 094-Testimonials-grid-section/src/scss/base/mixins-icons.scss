@@ -1,6 +1,6 @@
 @use 'functions' as fn;
 
-@mixin base-icon-mask-style($size: fn.px-to-rem(24)) {
+@mixin base-icon-mask-style($size: fn.rem(24)) {
   content: '';
   display: inline-block;
   width: $size;
@@ -12,7 +12,7 @@
   transition: color 0.3s linear, transform 0.3s linear;
 }
 
-@mixin base-icon-bg-image-style($size: fn.px-to-rem(24)) {
+@mixin base-icon-bg-image-style($size: fn.rem(24)) {
   content: '';
   display: inline-block;
   width: $size;

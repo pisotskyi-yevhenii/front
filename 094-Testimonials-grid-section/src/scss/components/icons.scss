@@ -2,5 +2,5 @@
 
 // Example use @mixin icon as HTML element
 .icon-quotes {
-  @include base.icon-quotes(base.px-to-rem(104));
+  @include base.icon-quotes(base.em(104px, base.$fsz-base));
 }

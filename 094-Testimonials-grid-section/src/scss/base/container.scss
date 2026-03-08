@@ -3,12 +3,12 @@
 
 // set as inner wrapper of section (wrapper all content of section)
 .container {
-  --container-inline-space-base: #{fn.px-to-rem(35)};
+  --container-inline-space-base: #{fn.rem(35)};
   padding-inline: fn.fluid-clamp(5, 35, 320, bp.$mobile);
 
-  @media (width >= fn.bp-in-em(bp.$mobile)) {
+  @media (width >= #{fn.em(bp.$mobile)}) {
     --container-inline-space: var(--container-inline-space-base); // min-padding around frames in Figma on mobile (320/375)
-    --container-width: #{fn.px-to-rem(647)}; // max-width of frame in Figma on desktop \ tablet
+    --container-width: #{fn.rem(647)}; // max-width of frame in Figma on desktop \ tablet
 
     padding-inline: var(--container-inline-space); // prevent sticky content of section to browser sides
     max-inline-size: calc(var(--container-inline-space) * 2 + var(--container-width));
@@ -16,12 +16,12 @@
     margin: 0 auto;
   }
 
-  @media (width > fn.bp-in-em(bp.$tablet-s)) {
-    --container-inline-space: calc(var(--container-inline-space-base) + #{fn.px-to-rem(25.5)});
-    --container-width: #{fn.px-to-rem(1114)}; // max-width of frame in Figma on desktop \ tablet
+  @media (width > fn.em(bp.$tablet-s)) {
+    --container-inline-space: calc(var(--container-inline-space-base) + #{fn.rem(25.5)});
+    --container-width: #{fn.rem(1114)}; // max-width of frame in Figma on desktop \ tablet
   }
 
-  @media (width > fn.bp-in-em(bp.$tablet-m)) {
+  @media (width > fn.em(bp.$tablet-m)) {
     --container-inline-space: var(--container-inline-space-base);
   }
 }

@@ -13,7 +13,3 @@
   font-style: $style;
   letter-spacing: $ls;
 }
-
-@mixin scaled-font-size($css-var-name-rem) {
-  font-size: calc($css-var-name-rem * var(--scale-component));
-}

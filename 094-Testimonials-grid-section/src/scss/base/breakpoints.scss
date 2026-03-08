@@ -2,11 +2,11 @@
 
 // ! here values without unit because it uses in clamp() where need just value and in @media where it converted to em
 $breakpoints: (
-  'mobile': 375,
-  'tablet-s': 768,
-  'tablet-m': 1024,
-  'wide': 1280,
-  'desktop': 1440,
+  'mobile': 375px,
+  'tablet-s': 768px,
+  'tablet-m': 1024px,
+  'wide': 1280px,
+  'desktop': 1440px,
 );
 
 // Variables for convenient use in code
@@ -15,3 +15,21 @@ $tablet-s: map.get($breakpoints, 'tablet-s');
 $tablet-m: map.get($breakpoints, 'tablet-m');
 $wide: map.get($breakpoints, 'wide');
 $desktop: map.get($breakpoints, 'desktop');
+
+// Font sizes
+$fsz-3xs: 11px;
+//$fsz-2xs: ;
+$fsz-xs: 13px;
+//$fsz-s: ;
+$fsz-base: 16px;
+$fsz-m: 20px;
+//$fsz-l: ;
+//$fsz-xl: ;
+//$fsz-2xl: ;
+//$fsz-3xl: ;
+
+// Border radius
+$border-radius-3xs: 8px;
+
+// Border width
+$border-width-3xs: 2px;

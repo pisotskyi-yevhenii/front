@@ -9,57 +9,51 @@
   --t-color-main-text: inherit;
 
   // Inner
-  --fsz-testimonial: 1rem;
-  @include base.scaled-font-size(var(--fsz-testimonial));
-  // layout
-  display: flex;
-  flex-direction: column;
-  gap: base.css-calc-em(16px, var(--fsz-testimonial));
-  padding: base.css-calc-em(calc(2px + 8vw), var(--fsz-testimonial));
-  border-radius: base.css-calc-em(var(--094-border-radius-3xs), var(--fsz-testimonial));
+  font-size: base.rem(base.$fsz-base); // need for em context in component
+  padding: base.css-calc-em(8.53vw, base.$fsz-base);
+  border-radius: base.em(base.$border-radius-3xs, base.$fsz-base);
   box-shadow: var(--094-box-shadow);
   background-color: var(--t-color-bg);
   position: relative;
-  z-index: 0;
+  z-index: 0; // need just to set z-index context
+  // layout
+  display: flex;
+  flex-direction: column;
+  gap: base.em(16px, base.$fsz-base);
 
-  @media (min-width: base.bp-in-em(base.$mobile)) {
-    padding: base.css-calc-em(32px, var(--fsz-testimonial));
+  @media (min-width: base.em(base.$mobile)) {
+    padding: base.em(32px, base.$fsz-base);
   }
 
-  @media (min-width: base.bp-in-em(base.$tablet-s)) {
+  @media (min-width: base.em(base.$tablet-s)) {
     &:first-child::before {
-      $width: base.css-calc-em(104px, var(--fsz-testimonial));
-      $height: base.css-calc-em(102px, var(--fsz-testimonial));
-
-      @include base.icon-quotes($width);
-      height: $height;
+      @include base.icon-quotes(base.em(104px, base.$fsz-base));
+      block-size: base.em(102px, base.$fsz-base);
       position: absolute;
       inset-block-start: 0;
-      inset-inline-end: base.px-to-rem(167);
+      inset-inline-end: base.rem(167);
       color: var(--094-color-purple-300);
       z-index: -1;
     }
   }
 
-  @media (min-width: base.bp-in-em(base.$tablet-m)) {
+  @media (min-width: base.em(base.$tablet-m)) {
     &:first-child::before {
-      inset-inline-end: base.px-to-rem(60);
+      inset-inline-end: base.rem(60);
     }
   }
 
   &__intro-text {
-    --fsz-t-intro-text: var(--094-font-size-m);
-    @include base.scaled-font-size(var(--fsz-t-intro-text));
-    line-height: 1.2em;
-    @include base.font-weight-style-letterSpacing(600, normal, base.css-calc-em(0.13px, var(--fsz-t-intro-text)));
+    font-size: base.em(base.$fsz-m, base.$fsz-base);
+    line-height: 1.2;
+    @include base.font-weight-style-letterSpacing(600, normal, base.em(0.13px, base.$fsz-m));
     color: var(--t-color-intro-text);
   }
 
   &__main-text {
-    --fsz-t-main-text: var(--094-font-size-xs);
-    @include base.scaled-font-size(var(--fsz-t-main-text));
-    line-height: 1.39em;
-    @include base.font-weight-style-letterSpacing(500, normal, base.css-calc-em(0.1px, var(--fsz-t-main-text)));
+    font-size: base.em(base.$fsz-xs, base.$fsz-base);
+    line-height: 1.39;
+    @include base.font-weight-style-letterSpacing(500, normal, base.em(0.1px, base.$fsz-xs));
     color: var(--t-color-main-text);
 
     quotes: '“' '”';
@@ -116,5 +110,9 @@
     &:hover {
       transform: scale(1.02);
     }
+  }
+
+  &--x2 {
+    font-size: base.rem(base.$fsz-base * 2);
   }
 }

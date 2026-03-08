@@ -9,13 +9,15 @@
 @use 'breakpoints' as bp;
 
 :root {
-  --scale-component: 1; // used to scale components based on em units
-
   // Breakpoints as CSS variables. Just for info in browser dev tools.
   @each $name, $value in bp.$breakpoints {
+    --094-#{$name}-em: #{fn.em($value)};
     --094-#{$name}-px: #{$value};
-    --094-#{$name}-em: #{fn.bp-in-em($value)};
   }
+
+  // Font
+  --094-font-family-barlow-semi-condensed: 'BarlowSemiCondensed', system-ui, sans-serif;
+  //--094-font-family-accent: 'Fraunces', system-ui, sans-serif;
 
   // Colors
   --094-color-white-100: hsl(0, 0%, 100%, 1);
@@ -34,24 +36,5 @@
   //
   --094-color-dark-blue: hsl(219, 29%, 14%, 1);
 
-  // Font
-  --094-font-family-barlow-semi-condensed: 'BarlowSemiCondensed', system-ui, sans-serif;
-  //--094-font-family-accent: 'Fraunces', system-ui, sans-serif;
-
-  --094-font-size-3xs: #{fn.px-to-rem(11)};
-  //--094-font-size-2xs:
-  --094-font-size-xs: #{fn.px-to-rem(13)};
-  //--094-font-size-s:
-  //--094-font-size-base: #{fn.px-to-rem(16)};
-  --094-font-size-m: #{fn.px-to-rem(20)};
-  //--094-font-size-l:
-  //--094-font-size-xl:
-  //--094-font-size-2xl:
-  //--094-font-size-3xl:
-
-  // Border
-  --094-border-radius-3xs: #{fn.px-to-rem(8)};
-  --094-border-width-3xs: #{fn.px-to-rem(2)};
-
-  --094-box-shadow: #{fn.px-to-rem(40)} #{fn.px-to-rem(60)} #{fn.px-to-rem(50)} #{fn.px-to-rem(-47)} var(--094-color-grey-500-opacity);
+  --094-box-shadow: #{fn.rem(40)} #{fn.rem(60)} #{fn.rem(50)} #{fn.rem(-47)} var(--094-color-grey-500-opacity);
 }
