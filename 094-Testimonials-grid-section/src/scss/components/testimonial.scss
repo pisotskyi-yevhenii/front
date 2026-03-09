@@ -9,7 +9,7 @@
   --t-color-main-text: inherit;
 
   // Inner
-  font-size: base.rem(base.$fsz-base); // need for em context in component
+  font-size: base.rem(base.$fsz-base); // in "rem", need for "em" context in component
   padding: base.css-calc-em(base.vw(32px, base.$mobile), base.$fsz-base);
   border-radius: base.em(base.$border-radius-3xs, base.$fsz-base);
   box-shadow: var(--094-box-shadow);

@@ -1,7 +1,7 @@
 @use '../base';
 
 .author {
-  font-size: base.rem(base.$fsz-base); // need for em context in component
+  font-size: base.rem(base.$fsz-base); // in "rem" need for "em" context in component
   display: flex;
   flex-wrap: wrap;
   justify-content: start;

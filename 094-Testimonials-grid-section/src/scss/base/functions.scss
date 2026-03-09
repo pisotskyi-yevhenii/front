@@ -30,7 +30,6 @@ Main Functions
   @return math.div($px, $bp) * 100vw;
 }
 
-
 @function fluid-clamp($min_px, $max_px, $min_bp_px, $max_bp_px) {
   // Strip px units completely
   $min_px: strip-px($min_px);
