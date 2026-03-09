@@ -37,7 +37,7 @@
     }
   }
 
-  @media (min-width: base.em(base.$tablet-m)) {
+  @media (width > base.em(base.$tablet-m)) {
     &:first-child::before {
       inset-inline-end: base.rem(60);
     }
